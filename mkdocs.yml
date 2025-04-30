@@ -1,0 +1,50 @@
+site_name: My Project Docs
+theme:
+  name: material
+  features:
+    # - navigation.expand
+    - navigation.sections
+    - navigation.tracking
+    - navigation.path
+
+plugins:
+  - search
+  - macros
+  - include-markdown
+
+# nav:
+  # - Home: index.md
+  # - Getting Started:
+  #     - Installation: getting-started/install.md
+  #     - Basics:
+  #       - Tips & Tricks: advanced/tips.md
+  #       - Advanced:
+  #         - Deployment: advanced/deployment.md
+  #     - Quickstart: getting-started/quickstart.md
+  #     - Tips & Tricks: advanced/tips.md
+  # - Advanced:
+  #     - Tips & Tricks: advanced/tips.md
+  #     - Deployment: advanced/deployment.md
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/install.md
+      - Quickstart: getting-started/quickstart.md
+      - Basics:
+          - First Steps: advanced/tips.md
+          - Second Steps: advanced/tips.md
+  - Advanced:
+      - Tips & Tricks: advanced/tips.md
+      - Deployment:
+          - Local: advanced/tips.md
+          - Cloud: advanced/tips.md
+  - API Reference:
+      - Authentication:
+          - Login: advanced/tips.md
+          - Logout: advanced/tips.md
+      - Data:
+          - Create: advanced/tips.md
+          - Read: advanced/tips.md
+          - Update: advanced/deployment.md
+          - Delete: advanced/deployment.md
