@@ -1,6 +1,22 @@
-site_name: My Project Docs
+site_name: Perovksite tandem documentation
+site_author: T. Jesper Jacobsson
 theme:
   name: material
+  palette:
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: green
+      accent: deep purple
   features:
     # - navigation.expand
     - navigation.sections
@@ -11,6 +27,28 @@ plugins:
   - search
   - macros
   - include-markdown
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+
+nav:
+  - Home: index.md
+  - Reference data: reference_data.md
 
 # nav:
   # - Home: index.md
@@ -26,25 +64,25 @@ plugins:
   #     - Tips & Tricks: advanced/tips.md
   #     - Deployment: advanced/deployment.md
 
-nav:
-  - Home: index.md
-  - Getting Started:
-      - Installation: getting-started/install.md
-      - Quickstart: getting-started/quickstart.md
-      - Basics:
-          - First Steps: advanced/tips.md
-          - Second Steps: advanced/tips.md
-  - Advanced:
-      - Tips & Tricks: advanced/tips.md
-      - Deployment:
-          - Local: advanced/tips.md
-          - Cloud: advanced/tips.md
-  - API Reference:
-      - Authentication:
-          - Login: advanced/tips.md
-          - Logout: advanced/tips.md
-      - Data:
-          - Create: advanced/tips.md
-          - Read: advanced/tips.md
-          - Update: advanced/deployment.md
-          - Delete: advanced/deployment.md
+# nav:
+#   - Home: index.md
+#   - Getting Started:
+#       - Installation: getting-started/install.md
+#       - Quickstart: getting-started/quickstart.md
+#       - Basics:
+#           - First Steps: advanced/tips.md
+#           - Second Steps: advanced/tips.md
+#   - Advanced:
+#       - Tips & Tricks: advanced/tips.md
+#       - Deployment:
+#           - Local: advanced/tips.md
+#           - Cloud: advanced/tips.md
+#   - API Reference:
+#       - Authentication:
+#           - Login: advanced/tips.md
+#           - Logout: advanced/tips.md
+#       - Data:
+#           - Create: advanced/tips.md
+#           - Read: advanced/tips.md
+#           - Update: advanced/deployment.md
+#           - Delete: advanced/deployment.md
