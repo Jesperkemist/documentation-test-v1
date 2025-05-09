@@ -47,42 +47,20 @@ markdown_extensions:
 
 
 nav:
-  - Home: index.md
   - Reference data: reference_data.md
-
-# nav:
-  # - Home: index.md
-  # - Getting Started:
-  #     - Installation: getting-started/install.md
-  #     - Basics:
-  #       - Tips & Tricks: advanced/tips.md
-  #       - Advanced:
-  #         - Deployment: advanced/deployment.md
-  #     - Quickstart: getting-started/quickstart.md
-  #     - Tips & Tricks: advanced/tips.md
-  # - Advanced:
-  #     - Tips & Tricks: advanced/tips.md
-  #     - Deployment: advanced/deployment.md
-
-# nav:
-#   - Home: index.md
-#   - Getting Started:
-#       - Installation: getting-started/install.md
-#       - Quickstart: getting-started/quickstart.md
-#       - Basics:
-#           - First Steps: advanced/tips.md
-#           - Second Steps: advanced/tips.md
-#   - Advanced:
-#       - Tips & Tricks: advanced/tips.md
-#       - Deployment:
-#           - Local: advanced/tips.md
-#           - Cloud: advanced/tips.md
-#   - API Reference:
-#       - Authentication:
-#           - Login: advanced/tips.md
-#           - Logout: advanced/tips.md
-#       - Data:
-#           - Create: advanced/tips.md
-#           - Read: advanced/tips.md
-#           - Update: advanced/deployment.md
-#           - Delete: advanced/deployment.md
+  - General: general/general.md
+  - key performance metrics: key_performance_metrics.md
+  - Module_data: module/module_data.md  
+  - Measurements: 
+    - JV_measurements: measurements/JV.md
+    - EQE_measurements: measurements/EQE.md
+    - Stabilized_performance: measurements/Stabilized_performance.md
+    - Stability: measurements/Stability.md
+    - Outdoor_performance: measurements/Outdoor_performance.md
+    - Transmission: measurements/Transmission.md
+    - Flexibility: measurements/Flexibility.md
+  - Device_stack: 
+    - Summary: device_stack/device_stack_general.md
+    - Layers: device_stack/layers.md
+  - Experimental_procedures: experimental_procedures/experimental_procedures.md
+  - Encapsulation: encapsulation/encapsulation_data.md                                         

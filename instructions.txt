@@ -1,0 +1,8 @@
+Run the local page
+mkdocs serve --dev-addr=0.0.0.0:9090
+
+Active environment
+.\venv\Scripts\Activate.ps1
+
+Resources will be found at:
+http://localhost:9090/

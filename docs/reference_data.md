@@ -2,6 +2,8 @@
 
 This section provides the reference information for the source of the data. <br/>
 
+### Primary data
+Data that describe the origin of the data and how that is providing the data, 
 
 ???+ "doi"
     The DOI number of the source of the data. <br/>
@@ -12,22 +14,38 @@ This section provides the reference information for the source of the data. <br/
     * example: "10.1016/j.solener.2020.06.034"
 
 ???+ "sample_id"
-    ID in the original data source (for traceability)
+    ID of the device in the original data source (for traceability)
 
     * type: str
-    * example: device_a
+    * example: "device_a"
 
 ???+ "data_entered_by_author"
-    TRUE if the data is is formatted by the one make the device or by one the study's co-authors   
+    TRUE if the data is formatted by the one making the device or by one the study's co-authors   
 
     * type: boolean
     * options: TRUE, FALSE
+
+???+ "name_of_person_entering_the_data"
+    Name of the  person providing the data. For traceability-   
+
+    * type: str
+    * example: "T. Jesper Jacobsson"
 
 ???+ "free_text_comment"
     Any additional description not captured by any other field.
 
     * type: str
     * example: "This is the control device"
+
+??? "part_of_initial_dataset"
+    TRUE if the data is part of the first initial data hunt. <br/>
+    Primary relevant during project development
+
+    * type: boolean
+    * options: TRUE, FALSE
+
+### Derived data
+Useful quantities that automatically can be derived from other data
 
 !!! tip "Tip : The following data can be populated automatically based on the DOI number and Crossref"  
 
@@ -56,5 +74,12 @@ This section provides the reference information for the source of the data. <br/
     * type: list of strings
     * example: ["T. Jesper Jacobsson", "Adam Hultqvist"]
 
+### Metadata
+Metadata that is added automatically if the device data is uploaded to NOMAD
+
+??? "ID"
+    Database ID in the Nomad database. Assigned automatically when file is uploaded
+
+    * type: int
 
 
