@@ -60,7 +60,7 @@
 ## Photoabsorber properties
 Photoabsorbers have been given somewhat more elaborate data sections that other layer. For photoabsorber layers, use those sections, which overwrites some of the more general sections used for the other layers. 
 
-<!-- ### Perovskites -->
+<!-- ### Perovskites  -->
 ??? "perovskite"
     {% include "device_stack/subsections/perovskite.md" %}
 
