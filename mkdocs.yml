@@ -47,6 +47,7 @@ markdown_extensions:
 
 
 nav:
+  - Home: index.md
   - Reference data: reference_data.md
   - General: general/general.md
   - key performance metrics: key_performance_metrics.md
