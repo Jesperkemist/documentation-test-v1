@@ -20,7 +20,7 @@ Data that describe the origin of the data and how that is providing the data,
     * example: "device_a"
 
 ???+ "data_entered_by_author"
-    TRUE if the data is formatted by the one making the device or by one the study's co-authors   
+    TRUE if the data is formatted by the person making the device or by one of the study's co-authors   
 
     * type: boolean
     * options: TRUE, FALSE
