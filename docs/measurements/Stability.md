@@ -24,35 +24,35 @@ Data that describe the type of measurement and on what it has been performed on
     * type: str
     * options: 
         * ISOS-D-1
-        * ISOS-D-1l
+        * ISOS-D-1I
         * ISOS-D-2
-        * ISOS-D-2l
+        * ISOS-D-2I
         * ISOS-D-3
         * ISOS-V-1
-        * ISOS-V-1l
+        * ISOS-V-1I
         * ISOS-V-2
-        * ISOS-V-2l
+        * ISOS-V-2I
         * ISOS-V-3
         * ISOS-L-1
-        * ISOS-L-1l
+        * ISOS-L-1I
         * ISOS-L-2
-        * ISOS-L-2l
+        * ISOS-L-2I
         * ISOS-L-3
         * ISOS-O-1
         * ISOS-O-2
         * ISOS-O-3
         * ISOS-T-1
-        * ISOS-T-1l
+        * ISOS-T-1I
         * ISOS-T-2
         * ISOS-T-2l
         * ISOS-T-3
-        * ISOS-T-3l
+        * ISOS-T-3I
         * ISOS-LC-1
-        * ISOS-LC-1l
+        * ISOS-LC-1I
         * ISOS-LC-2
-        * ISOS-LC-2l
+        * ISOS-LC-2I
         * ISOS-LC-3
-        * ISOS-LC-3l
+        * ISOS-LC-3I
         * ISOS-LT-1
         * ISOS-LT-2
         * ISOS-LT-3

@@ -15,7 +15,19 @@
         * heterojunction
         * TopCon
         * other
-        
+
+??? "type_of_silicon"
+    The type of silicon
+
+    * type: str
+    * options: 
+        * Amorphous
+        * Monocrystalline 
+        * Polycrystalline
+        * CZ
+        * Float-zone
+        * other
+
 ??? "doping_sequence"
     Description of the doping sequence
 

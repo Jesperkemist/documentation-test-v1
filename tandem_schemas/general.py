@@ -30,7 +30,12 @@ class General(ArchiveSection):
     # Top level data
     architecture = Quantity(
         description='The general architecture of the tandem device. For 4-terminal devices and other configurations where there are two independent sub cells simply stacked on top of each other, define this as “stacked”',
-        type=MEnum(['Stacked', 'Monolithic', 'Other']),
+        type=MEnum(['Stacked', 
+                    'Monolithic', 
+                    'Laminated',
+                    'Spectral_splitter',
+                    'Wide_bandgap_cell_used_as_reflector', 
+                    'Other']),
         default='Other',
         a_eln=ELNAnnotation(component='EnumEditQuantity'),
     )

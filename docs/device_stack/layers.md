@@ -84,6 +84,9 @@ Photoabsorbers have been given somewhat more elaborate data sections that other 
 ??? "quantum_dot"
     {% include "device_stack/subsections/photoabsorber_qd.md" %}
 
+??? "GaAs"
+    {% include "device_stack/subsections/photoabsorber_GaAs.md" %}
+
 ## Subsections    
 <!-- ### Components in layer -->
 {% include "device_stack/subsections/components.md" %}

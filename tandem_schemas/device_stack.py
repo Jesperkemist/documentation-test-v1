@@ -27,7 +27,6 @@ class EnvironmentalConditionsDeposition(ArchiveSection):
 
     atmosphere = Quantity(
         description='Atmosphere during the activity.',
-        type=str,
         type=MEnum(['air', 'dry_air', 'N2', 'Ar', 'He', 'O2', 'H2', 'vacuum', 'other']),
         a_eln=ELNAnnotation(component='EnumEditQuantity')
     )
