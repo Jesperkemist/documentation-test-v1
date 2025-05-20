@@ -76,7 +76,7 @@ Photoabsorbers have been given somewhat more elaborate data sections that other 
     {% include "device_stack/subsections/photoabsorber_CZTS.md" %}
 
 ??? "OPV"
-    {% include "device_stack/subsections/photoabsorber_OPV.md" %}
+    {% include "device_stack/subsections/photoabsorber_OPV_2.md" %}
 
 ??? "DSSC"
     {% include "device_stack/subsections/photoabsorber_DSSC.md" %}
