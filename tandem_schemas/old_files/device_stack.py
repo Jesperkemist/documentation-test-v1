@@ -25,31 +25,10 @@ class EnvironmentalConditionsDeposition(ArchiveSection):
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
-    in_glove_box = Quantity(
-        type=bool,
-        shape=[],
-        description="""True if the the activity was performed in a glove box, False otherwise.
-            """,
-        a_eln=dict(component='BoolEditQuantity'),
-    )
-
     atmosphere = Quantity(
         description='Atmosphere during the activity.',
         type=MEnum(['air', 'dry_air', 'N2', 'Ar', 'He', 'O2', 'H2', 'vacuum', 'other']),
         a_eln=ELNAnnotation(component='EnumEditQuantity')
-    )
-
-    ambient_temperature = Quantity(
-        description='Ambient temperature during the activity.',
-        type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
-    )
-
-    relative_humidity = Quantity(
-        description='Relative humidity during the activity. Given in %. i.e. number between 0 and 100',
-        type=float,
-        a_eln=ELNAnnotation(component='NumberEditQuantity'),
     )
 
     pressure = Quantity(
@@ -59,17 +38,40 @@ class EnvironmentalConditionsDeposition(ArchiveSection):
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='Pa'),
     )
 
+    in_glove_box = Quantity(
+        type=bool,
+        shape=[],
+        description="""True if the the activity was performed in a glove box, False otherwise.
+            """,
+        a_eln=dict(component='BoolEditQuantity'),
+    )
+    
+    ambient_temperature = Quantity(
+        description='Ambient temperature during the activity.',
+        type=float,
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
+    )
+
+    relative_humidity = Quantity(
+        description='Relative humidity during the activity.',
+        type=float,
+        unit='%',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='%'),
+    )
+
     # substrate_temperature = Quantity(
     #     description='The temperature of the substrate during the activity.',
     #     type=float,
-    #     unit='celsius',
-    #     a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+    #     unit='C',
+    #     a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     # )
 
     oxygen_concentration = Quantity(
-        description='The oxygen concentration during the activity. Given in %. i.e. number between 0 and 100',
+        description='The oxygen concentration during the activity.',
         type=float,
-        a_eln=ELNAnnotation(component='NumberEditQuantity'),
+        unit='%',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='%'),
     ) 
 
 
@@ -340,13 +342,13 @@ class Component(ArchiveSection):
     )
     
     # Supplier information
-    supplier = SubSection(
+    Supplier = SubSection(
         section_def=SupplierInformation,   
         description='The supplier information of the compound.',
     )
     
     # Nanostructure information
-    nanostructuration = SubSection(
+    nanostructuration = subSection(
         section_def=NanostructureInformation,
         description='The nanostructure information of the compound.',
     )
@@ -395,7 +397,7 @@ class SputteringTarget(ArchiveSection):
     )
 
     # Supplier information
-    supplier = SubSection(
+    Supplier = SubSection(
         section_def=SupplierInformation,   
         description='The supplier information of the compound.',
     )
@@ -458,7 +460,7 @@ class EvaporationSource(ArchiveSection):
     )
 
     # Supplier information
-    supplier = SubSection(
+    Supplier = SubSection(
         section_def=SupplierInformation,   
         description='The supplier information of the compound.',
     )
@@ -512,7 +514,7 @@ class LigandsAndDyes(ArchiveSection):
     )
     
     # Supplier information
-    supplier = SubSection(
+    Supplier = SubSection(
         section_def=SupplierInformation,   
         description='The supplier information of the compound.',
     )
@@ -546,7 +548,6 @@ class GasComponent(ArchiveSection):
     origin = Quantity(
         description='The origin of the substance.',
         type=MEnum([
-                'reaction_product',
                 'commercial_supplier',
                 'made_in_house',
                 'made_by_collaborator',
@@ -639,7 +640,7 @@ class SolutionComponent(ArchiveSection):
     )
     
     # Nanostructure information
-    nanostructuration = SubSection(
+    nanostructuration = subSection(
         section_def=NanostructureInformation,
         description='The nanostructure information of the compound.',
     )
@@ -664,9 +665,9 @@ class Solution(ArchiveSection):
     age = Quantity(
         description='The time between preparation and the use of the solution.',
         type=float,
-        unit='hr',
+        unit='h',
         a_eln=ELNAnnotation(
-            component='NumberEditQuantity', defaultDisplayUnit='hr'),
+            component='NumberEditQuantity', defaultDisplayUnit='h'),
     )
 
     volume = Quantity(
@@ -696,7 +697,7 @@ class Solution(ArchiveSection):
     temperature = Quantity(
         description='The temperature of the solution.',
         type=float,
-        unit='celsius',
+        unit='C',
         a_eln=ELNAnnotation(
             component='NumberEditQuantity', defaultDisplayUnit='celsius'),
     )    
@@ -704,7 +705,7 @@ class Solution(ArchiveSection):
     temperature_max = Quantity(
         description='The maximum temperature the solution has experienced.',
         type=float,
-        unit='celsius',
+        unit='C',
         a_eln=ELNAnnotation(
             component='NumberEditQuantity', defaultDisplayUnit='celsius'),
     )  
@@ -815,35 +816,17 @@ class PhotoabsorberSilicon(ArchiveSection):
         description='The type of silicon cell.',
         type=MEnum(
             [
-                'Amorphous',
-                'Al-BSF',
-                'c-type',
+                'AL-BSF',
+                'c-type ',
                 'HIT',
-                'HJT',
-                'Heterojunction',
                 'Homojunction',
-                'IBC',
                 'n-type',
                 'p-type',
                 'PERC',
-                'PERL',
                 'SC/nFAB',
-                'TOPCon',
-                'other'
-            ]
-        ),
-        a_eln=ELNAnnotation(component='EnumEditQuantity'),
-    )
-
-    type_of_silicon = Quantity(
-        description='The type of silicon.',
-        type=MEnum(
-            [
-                'Amorphous',
-                'Monocrystalline',
-                'Polycrystalline',
-                'CZ',
-                'Float-zone',
+                'PERL',
+                'heterojunction',
+                'TopCon',
                 'other'
             ]
         ),
@@ -889,19 +872,12 @@ class PhotoabsorberCIGS(ArchiveSection):
     molecular_formula = Quantity(
         description='The molecular formula. Can be derived automatically based on the stoichiometric coefficients',
         type=str,
-        # a_eln=ELNAnnotation(component='StringEditQuantity'),
+        a_eln=ELNAnnotation(component='StringEditQuantity'),
     )
 
+    # TODO add functionality for populating the derived quantities
     def normalize(self, archive, logger):
-        super().normalize(archive, logger)
-        
-        # Generate molecular formula
-        atoms = ["Cu", "In", "Ga", "Se"]
-        index = [self.Cu, self.In, self.Ga, self.Se]
-        index = ["none" for i in index if i in ("0", "0.0", None)]
-        index = [str(i) for i in index]
-        index = ["" for i in index if i == "1"]
-        self.molecular_formula = "".join([a + i for a, i in zip(atoms, index) if i not in ("none")]) 
+        super().normalize(archive, logger)    
 
 
 class PhotoabsorberCZTS(ArchiveSection):
@@ -936,55 +912,13 @@ class PhotoabsorberCZTS(ArchiveSection):
     molecular_formula = Quantity(
         description='The molecular formula. Can be derived automatically based on the stoichiometric coefficients',
         type=str,
-        # a_eln=ELNAnnotation(component='StringEditQuantity'),
+        a_eln=ELNAnnotation(component='StringEditQuantity'),
     )
 
+    # TODO add functionality for populating the derived quantities
     def normalize(self, archive, logger):
         super().normalize(archive, logger)  
-        
-        # Generate molecular formula
-        atoms = ["Cu", "Zn", "Se", "S"]
-        index = [self.Cu, self.Zn, self.Se, self.S]
-        index = ["none" for i in index if i in ("0", "0.0", None)]
-        index = [str(i) for i in index]
-        index = ["" for i in index if i == "1"]
-        self.molecular_formula = "".join([a + i for a, i in zip(atoms, index) if i not in ("none")]) 
     
-
-class PhotoabsorberGaAs(ArchiveSection):
-    """
-    This is the section for a CIGS photoabsorber.
-    """
-    Ga = Quantity(
-        description='The stoichiometric coefficient for Ga',
-        type=float,
-        a_eln=ELNAnnotation(component='NumberEditQuantity'),
-    )
-
-    As = Quantity(
-        description='The stoichiometric coefficient for As',
-        type=float,
-        a_eln=ELNAnnotation(component='NumberEditQuantity'),
-    )
-
-    # Derived quantities
-    molecular_formula = Quantity(
-        description='The molecular formula. Can be derived automatically based on the stoichiometric coefficients',
-        type=str,
-        # a_eln=ELNAnnotation(component='StringEditQuantity'),
-    )
-
-    def normalize(self, archive, logger):
-        super().normalize(archive, logger)
-        
-        # Generate molecular formula
-        atoms = ["Ga", "As"]
-        index = [self.Ga, self.As]
-        index = ["none" for i in index if i in ("0", "0.0", None)]
-        index = [str(i) for i in index]
-        index = ["" for i in index if i == "1"]
-        self.molecular_formula = "".join([a + i for a, i in zip(atoms, index) if i not in ("none")]) 
-
 
 class PhotoabsorberOPV(ArchiveSection):
     """
@@ -1002,11 +936,8 @@ class PhotoabsorberOPV(ArchiveSection):
             [
                 'singel_layer',
                 'bilayer',
-                'polymer',
                 'heterojunction',
                 'bulk_heterojunction',
-                'polymer bulk heterojunction',
-                'homojunction',
             ]
         ),
         a_eln=ELNAnnotation(component='EnumEditQuantity'),
@@ -1088,7 +1019,7 @@ class PhotoabsorberDSSC(ArchiveSection):
     )        
 
 
-class PhotoabsorberQD(ArchiveSection):
+class PhotoabsorberQD(NanostructureInformation):
     """
     This is the section for a quantum dot photoabsorbers.
     """
@@ -1099,18 +1030,12 @@ class PhotoabsorberQD(ArchiveSection):
     )
        
     # subsections
-    # Nanostructure information
-    nanostructuration = SubSection(
-        section_def=NanostructureInformation,
-        description='The nanostructure information of the compound.',
-    )
-
     ligands = SubSection(
         section_def=LigandsAndDyes,
         description='The components.',
         repeats=True,
     )     
-   
+    
 ### Material and layer properties
 class Area(ArchiveSection):
     value = Quantity(
@@ -1365,8 +1290,43 @@ class LayerProperties(ArchiveSection):
 
 class DepositionSegment(ArchiveSection):
     """
-    This is a collection point for deposition procedures
+    This is the section for a deposition segment of a layer.
     """
+    # # Deposition method
+    # method = Quantity(
+    #     description='The method used to deposit the layer.',
+    #     type=MEnum(
+    #         [
+    #             'spin_coating',
+    #             'doctor_blade',
+    #             'slot_die',
+    #             'spray_coating',
+    #             'inkjet_printing',
+    #             'screen_printing',
+    #             'dip_coating',
+    #             'thermal_evaporation',
+    #             'sputtering',
+    #             'CVD',
+    #             'ALD',
+    #             'other',
+    #         ]
+    #     ),
+    #     a_eln=ELNAnnotation(component='EnumEditQuantity'),
+    # )
+
+    # time_from_last_segment = Quantity(
+    #     description="""The time from the finalization of the last segment 
+    #     and the start of this segment. If this is the first segment, this would be 0.""",
+    #     type=float,
+    #     unit='minute',
+    #     a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='minute'),
+    # )
+
+    # # Environmental conditions
+    # environmental_conditions = SubSection(
+    #     section_def=EnvironmentalConditionsDeposition,
+    #     description='Environmental conditions during the activity.',
+    # )
     pass
 
 
@@ -1443,7 +1403,7 @@ class Dipping(ArchiveSection):
     
     drying_procedure = Quantity(
         description='The methode by which the liquid is removed from the sample after dipping.',
-        type=MEnum([
+        type=EMum([
                 'gas_blowing',
                 'self_drying',
                 'heating',
@@ -1456,15 +1416,15 @@ class Dipping(ArchiveSection):
     sample_temperature = Quantity(
         description='The temperature of the sample during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     solution_temperature = Quantity(
         description='The temperature of the solution during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     solution = SubSection(
@@ -1487,15 +1447,15 @@ class TemperatureSegment(ArchiveSection):
     temperature_start = Quantity(
         description='Temperature at the start of the segment.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )    
 
     temperature_end = Quantity(
         description='Temperature at the end of the segment.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )      
 
     temperature_acceleration = Quantity(
@@ -1612,8 +1572,8 @@ class GasQuenchingDetails(ArchiveSection):
     temperature = Quantity(
         description='The temperature of the gas.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     distance_between_nozzle_and_substrate = Quantity(
@@ -1648,8 +1608,8 @@ class PostDepositionProcedure(DepositionSegment):
         description="""The time from the finalization of the last layer 
         and the start of the deposition of this.""",
         type=float,
-        unit='hr',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='hr'),
+        unit='h',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='h'),
     )
 
     # Subsections
@@ -1687,15 +1647,15 @@ class AtomicLayerDeposition(DepositionSegment):
     substrate_temperature = Quantity(
         description='The temperature of the substrate during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
 
     flow_rate = Quantity(
         description='The flow rate.',
         type=float,
-        unit='cm^3/minute',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='cm^3/minute'),
+        unit='sccm',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='sccm'),
     ) 
 
     number_of_cycles = Quantity(
@@ -1724,13 +1684,9 @@ class AtomicLayerDeposition(DepositionSegment):
         repeats=True,  
     ) 
 
-    method = Quantity(
-        type=str,
-    )
-      
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'AtomicLayerDeposition' 
+        self.method = 'atomic_layer_deposition' 
 
 
 class ChemicalBathDeposition(DepositionSegment):
@@ -1748,21 +1704,21 @@ class ChemicalBathDeposition(DepositionSegment):
     sample_temperature = Quantity(
         description='The temperature of the sample during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     solution_temperature = Quantity(
         description='The temperature of the solution during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )    
 
     # Categorical quantities
     drying_procedure = Quantity(
         description='The method by which the liquid is removed from the sample after dipping.',
-        type=MEnum([
+        type=EMum([
                 'gas_blowing',
                 'self_drying',
                 'heating',
@@ -1789,13 +1745,9 @@ class ChemicalBathDeposition(DepositionSegment):
         description='Environmental conditions during the activity.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'ChemicalBathDeposition'      
+        self.method = 'chemical_bath_deposition'      
 
 
 class Cleaning(DepositionSegment):
@@ -1836,14 +1788,10 @@ class Cleaning(DepositionSegment):
         section_def=EnvironmentalConditionsDeposition,
         description='Environmental conditions during the activity.',
     )
-
-    method = Quantity(
-        type=str,
-    )
     
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'Cleaning'  
+        self.method = 'cleaning'  
 
 
 class DipCoating(DepositionSegment):
@@ -1861,21 +1809,21 @@ class DipCoating(DepositionSegment):
     sample_temperature = Quantity(
         description='The temperature of the sample during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     solution_temperature = Quantity(
         description='The temperature of the solution during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )    
      
     number_of_repetitions = Quantity(
         description='The number of repetitions (dippings).',
         type=int,
-        a_eln=ELNAnnotation(component='NumberEditQuantity'),
+        a_eln=ELNAnnotation(component='IntegerEditQuantity'),
     )
     
     time_between_repetitions = Quantity(
@@ -1888,7 +1836,7 @@ class DipCoating(DepositionSegment):
     # Categorical quantities
     drying_procedure = Quantity(
         description='The methode by which the liquid is removed from the sample after dipping.',
-        type=MEnum([
+        type=EMum([
                 'gas_blowing',
                 'self_drying',
                 'heating',
@@ -1915,13 +1863,9 @@ class DipCoating(DepositionSegment):
         description='Environmental conditions during the activity.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'DipCoating'  
+        self.method = 'dip_coating'  
 
 
 class DoctorBlading(DepositionSegment):
@@ -1967,15 +1911,15 @@ class DoctorBlading(DepositionSegment):
     sample_temperature = Quantity(
         description='The temperature of the sample during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     solution_temperature = Quantity(
         description='The temperature of the solution during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )     
     
     # categorical quantities
@@ -1996,13 +1940,9 @@ class DoctorBlading(DepositionSegment):
         description='Environmental conditions during the activity.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'DoctorBlading'  
+        self.method = 'doctor_blading'  
 
 
 class Evaporation(DepositionSegment):
@@ -2013,7 +1953,7 @@ class Evaporation(DepositionSegment):
     number_of_sources = Quantity(
         description='The number of sources used for the evaporation.',
         type=int,
-        a_eln=ELNAnnotation(component='NumberEditQuantity'),
+        a_eln=ELNAnnotation(component='IntegerEditQuantity'),
     )
     
     duration = Quantity(
@@ -2026,8 +1966,8 @@ class Evaporation(DepositionSegment):
     substrate_temperature = Quantity(
         description='The temperature of the substrate during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     substrate_rotation_speed = Quantity(
@@ -2070,14 +2010,10 @@ class Evaporation(DepositionSegment):
         description="""Environmental conditions during the activity. 
         Mostly relevant if the evaporation not is done in a vaccuum chamber""",
     )
-
-    method = Quantity(
-        type=str,
-    )
     
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'Evaporation'  
+        self.method = 'evaporation'  
 
 
 class Heating(DepositionSegment):
@@ -2117,13 +2053,9 @@ class Heating(DepositionSegment):
         description='Environmental conditions during the activity.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'Heating'    
+        self.method = 'heating'    
     
 
 class InkjetPrinting(DepositionSegment):
@@ -2146,10 +2078,10 @@ class InkjetPrinting(DepositionSegment):
     )
 
     print_resolution = Quantity(
-        description='The print resolution in dpi.',
+        description='The print resolution.',
         type=float,
-        # unit='dpi',
-        a_eln=ELNAnnotation(component='NumberEditQuantity'),
+        unit='dpi',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='dpi'),
     )
 
     print_speed = Quantity(
@@ -2169,15 +2101,15 @@ class InkjetPrinting(DepositionSegment):
     substrate_temperature = Quantity(
         description='The temperature of the substrate during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )  
      
     ink_temperature = Quantity(
         description='The temperature of the solution during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )  
      
     # categorical qunatities
@@ -2197,29 +2129,21 @@ class InkjetPrinting(DepositionSegment):
         section_def=EnvironmentalConditionsDeposition,
         description='Environmental conditions during the activity.',
     )  
-
-    method = Quantity(
-        type=str,
-    )
       
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'InkjetPrinting'     
+        self.method = 'inkjet_printing'     
 
 
 class IonExchangeByDipping(DipCoating):
     """
     Details for a process where ions in a perovksite is exchanged by 
     dipping it in a solution 
+    
     """
-    
-    method = Quantity(
-        type=str,
-    )
-    
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'IonExchangeByDipping'  
+        self.method = 'ion_exchange_by_dipping'  
 
 
 class IonExchangeByGasDiffusion(DepositionSegment):
@@ -2239,15 +2163,15 @@ class IonExchangeByGasDiffusion(DepositionSegment):
     substrate_temperature = Quantity(
         description='The temperature of the substrate during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     gas_temperature = Quantity(
         description='The temperature of the reaction gas during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
 
     # Categorical qunatities
@@ -2269,16 +2193,12 @@ class IonExchangeByGasDiffusion(DepositionSegment):
         description='Environmental conditions during the activity.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'IonExchangeByGasDiffusion'  
+        self.method = 'ion_exchange_by_gas_diffusion'  
 
 
-class SlotDieCoating(DepositionSegment):
+class SlotDyeCoating(DepositionSegment):
     """
     Details for a slot dye coatig process
     """
@@ -2321,15 +2241,15 @@ class SlotDieCoating(DepositionSegment):
     sample_temperature = Quantity(
         description='The temperature of the sample during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     solution_temperature = Quantity(
         description='The temperature of the solution during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )     
     
     # Categorical qunatities
@@ -2350,13 +2270,9 @@ class SlotDieCoating(DepositionSegment):
         description='Environmental conditions during the activity.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'SlotDieCoating'  
+        self.method = 'slot_dye_coating'  
 
 
 class SpinCoating(DepositionSegment):
@@ -2395,8 +2311,8 @@ class SpinCoating(DepositionSegment):
     substrate_temperature = Quantity(
         description='The temperature of the substrate during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
 
     solvent_volume = Quantity(
@@ -2469,13 +2385,9 @@ class SpinCoating(DepositionSegment):
         description='Details about the gas quenching treatment.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'SpinCoating'  
+        self.method = 'spin-coating'  
 
 
 class SprayCoating(DepositionSegment):
@@ -2521,15 +2433,15 @@ class SprayCoating(DepositionSegment):
     solution_temperature = Quantity(
         description='The temperature of the solution during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     ) 
 
     sample_temperature = Quantity(
         description='The temperature of the sample during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     sample_area = Quantity(
@@ -2570,13 +2482,9 @@ class SprayCoating(DepositionSegment):
         description='Environmental conditions during the activity.',
     )
 
-    method = Quantity(
-        type=str,
-    )
-
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'SprayCoating'  
+        self.method = 'slot_dye_coating'  
 
 
 class Sputtering(DepositionSegment):
@@ -2594,8 +2502,8 @@ class Sputtering(DepositionSegment):
     substrate_temperature = Quantity(
         description='The temperature of the substrate during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
     
     substrate_rotation_speed = Quantity(
@@ -2640,14 +2548,10 @@ class Sputtering(DepositionSegment):
         description='The gases in the mixture. For reactive sputtering',
         repeats=True
     )  
-
-    method = Quantity(
-        type=str,
-    )
   
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'Sputtering'  
+        self.method = 'sputtering'  
 
 
 class UVOzonTreatment(DepositionSegment):
@@ -2675,8 +2579,8 @@ class UVOzonTreatment(DepositionSegment):
     substrate_temperature = Quantity(
         description='The temperature of the substrate during the activity.',
         type=float,
-        unit='celsius',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='celsius'),
+        unit='C',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )
 
     uv_wavelength = Quantity(
@@ -2705,14 +2609,10 @@ class UVOzonTreatment(DepositionSegment):
         section_def=EnvironmentalConditionsDeposition,
         description='Environmental conditions during the activity.',
     )
-
-    method = Quantity(
-        type=str,
-    )
     
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        self.method = 'UVOzonTreatment'      
+        self.method = 'uv_ozon_treatment'      
 
 
 ### Deposition procedures top sections
@@ -2770,8 +2670,8 @@ class DepositionProcedure(ArchiveSection):
         description="""The time from the finalization of the last layer 
         and the start of the deposition of this.""",
         type=float,
-        unit='hr',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='hr'),
+        unit='h',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='h'),
     )
     
     ## Subsections
@@ -2791,6 +2691,35 @@ class DepositionProcedure(ArchiveSection):
 
 
 ### Layers
+class StackSummary(ArchiveSection):
+    """
+    This is the summary of the device stack.
+    """
+
+    # Number of layers in the stack
+    n_layers = Quantity(
+        description='Number of layers in the stack.',
+        type=int,
+        shape=[],
+        a_eln=ELNAnnotation(component='NumberEditQuantity'),
+    )
+
+    # Stack sequence
+    stack_sequence = Quantity(
+        description="""A list of the materials in the layers of the stack. <br/>  
+        If a proper device stack section is provided, the stack sequence can be generated from that one.
+
+        * Start with the layer in the bottom of the device (i..e that is furthest from the sun) and work up from that.
+        * If two materials, e.g. A and B, are mixed in one layer, list the materials in alphabetic order and separate them with semicolons, as in (A; B)
+        * The perovskite layer is stated as “Perovskite”, regardless of composition, mixtures, dimensionality etc. Those details are provided elsewhere. 
+        * Use common abbreviations when possible but spell them out when there is risk for confusion. 
+            """,
+        type=str,
+        shape=['*'],
+        a_eln=ELNAnnotation(component='StringEditQuantity'),  
+    )
+
+
 class Layer(ArchiveSection):
     """
     This is the section for a layer in the device stack.
@@ -2811,7 +2740,7 @@ class Layer(ArchiveSection):
         a_eln=ELNAnnotation(component='StringEditQuantity'),
     )
 
-    device_subset = Quantity(
+    sub_device_identity = Quantity(
         type=int,
         shape=[],
         description="""
@@ -2830,9 +2759,7 @@ class Layer(ArchiveSection):
             'air_gap',
             'anti_reflection',
             'back_contact',
-            'back_reflector',
             'buffer_layer',
-            'down_conversion',
             'edge_sealing',
             'electrolyte',
             'encapsulation',
@@ -2843,18 +2770,15 @@ class Layer(ArchiveSection):
             'mesoporous_scaffold',
             'middle_contact',
             'optical_spacer',
-            'organic_dye',
             'photoabsorber',
             'recombination_layer',
             'refractive_index_matching',
             'self_assembled_monolayer',
-            'spectral_splitter',
             'substrate',
-            'transparent_conducting_oxide',
             'other']),
         shape=[],
         description="The primary functionality of the layer in the device stack.",
-        a_eln=ELNAnnotation(component='EnumEditQuantity'),
+        a_eln=ELNAnnotation(component='StringEditQuantity'),
     )
 
     ### Subsections
@@ -2892,11 +2816,6 @@ class Layer(ArchiveSection):
     quantum_dot = SubSection(
         section_def=PhotoabsorberQD,
         description='Quantum dot specific information.',
-    )
-    
-    GaAs = SubSection(
-        section_def=PhotoabsorberGaAs,
-        description='GaAs specific information.',
     )
     
     ## Other subsections
@@ -2937,39 +2856,19 @@ class Layer(ArchiveSection):
         type=int,
         shape=[],
         description="""The position in the device stack for the layer. Counted from the bottom. Can be populated automatically """,
-        # a_eln=ELNAnnotation(component='NumberEditQuantity'),
+        a_eln=ELNAnnotation(component='NumberEditQuantity'),
     )    
+    
+    # TODO add functionality for populating the layer index
      
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
 
 ### Master class putting everything together
-class DeviceStack(ArchiveSection):
+class DeviceStack(StackSummary):
     """
     This is the master class for the device stack. It contains all the layers in the device stack.
     """
-    
-    ## Derived qunatities
-    n_layers = Quantity(
-        description='Number of layers in the stack.',
-        type=int,
-        shape=[],
-        # a_eln=ELNAnnotation(component='NumberEditQuantity'),
-    )
-
-    stack_sequence = Quantity(
-        description="""A list of the materials in the layers of the stack. <br/>  
-        If a proper device stack section is provided, the stack sequence can be generated from that one.
-
-        * Start with the layer in the bottom of the device (i.e. that is furthest from the sun) and work up from that.
-        * If two materials, e.g. A and B, are mixed in one layer, list the materials in alphabetic order and separate them with semicolons, as in (A; B)
-        * The perovskite layer is stated as “Perovskite”, regardless of composition, mixtures, dimensionality etc. Those details are provided elsewhere. 
-        * Use common abbreviations when possible but spell them out when there is risk for confusion. 
-            """,
-        type=str,
-        shape=[],
-        # a_eln=ELNAnnotation(component='StringEditQuantity'),  
-    )
     
     ## Subsections
     layers = SubSection(
@@ -2977,29 +2876,10 @@ class DeviceStack(ArchiveSection):
         description='The stack of layers in the device starting from the bottom.',
         repeats=True,
     )
+  
+    # TODO add functionality for populating the summary section with the data from the layers
      
     def normalize(self, archive, logger):
         super().normalize(archive, logger)
-        
-        # Number of layers
-        self.n_layers = len(self.layers)
-        
-        # Stack sequence
-        stack_sequence = []
-        for i in range(self.n_layers):
-            if hasattr(self.layers[i], 'name'):
-                if len(str(self.layers[i].name)) > 0:
-                    stack_sequence.append(self.layers[i].name)
-                else:
-                    stack_sequence.append('unknown')
-            else:
-                stack_sequence.append('unknown')
-          
-        self.stack_sequence = " | ".join(stack_sequence)       
-        
-        # Layer index
-        for i, layer in enumerate(self.layers):
-            self.layers[i].layer_index = i + 1
 
-                
 m_package.__init_metainfo__()

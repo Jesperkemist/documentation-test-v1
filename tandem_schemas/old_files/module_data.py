@@ -77,7 +77,8 @@ class ModuleData(ArchiveSection):
     
     # Subsections
     subcells = SubSection(
-        description="""Describe each module in the stack.""",
+        description="""Describe each module in the stack .
+            """
         section_def=Module,
         repeats=True,
     )

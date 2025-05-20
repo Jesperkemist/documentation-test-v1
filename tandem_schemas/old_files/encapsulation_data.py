@@ -13,8 +13,8 @@ class EncapsulationData(ArchiveSection):
         type=float,
         unit= 'g/m**2/hr',
         shape=[],
-        description="The water vapour transmission rate",
-        a_eln=ELNAnnotation(component='NumberEditQuantity',
+        description="The water vapour transmission rate".
+        a_eln=ELNAnnotation(component= NumberEditQuantity,
             defaultDisplayUnit='g/m**2/hr') 
     )
     
@@ -22,8 +22,8 @@ class EncapsulationData(ArchiveSection):
         type=float,
         unit= 'cm**3/m**2/hr',
         shape=[],
-        description="The oxygen transmission rate",
-        a_eln=ELNAnnotation(component='NumberEditQuantity',
+        description="The oxygen transmission rate".
+        a_eln=ELNAnnotation(component= NumberEditQuantity,
             defaultDisplayUnit='cm**3/m**2/hr') 
     )    
     

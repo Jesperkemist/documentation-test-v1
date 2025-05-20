@@ -78,21 +78,27 @@ class KeyPerformanceMetrics(ArchiveSection):
         a_eln=ELNAnnotation(component='NumberEditQuantity'),
     )
 
-    t80_isos_l1 = Quantity(
-        description="""Time to 80 percent of initial power conversion efficiency after 1000 h under ISOS L1 conditions.
+    t80_1000h_isos_l1 = Quantity(
+        description="""Time to 80% of initial power conversion efficiency after 1000 h under ISOS L1 conditions.
                 i.e. AM 1.5, Maximum powerpoint (or held at constant potential close to the Vmp), 
-                room temperature, inert atmosphere""",
+                room temperature, inert atmosphere""",,
         type=float,
-        unit='hr',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='hr'),
+        unit='h',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='h'),
     )
     
-    t80_isos_l3 = Quantity(
-        description='Time to 80 percent of initial power conversion efficiency after 1000 h under ISOS L3 conditions, i.e. AM 1.5, Maximum powerpoint, 85°C and 50 % RH',
+    t80_1000h_isos_l3 = Quantity(
+        description='Time to 80% of initial power conversion efficiency after 1000 h under ISOS L3 conditions, i.e. AM 1.5, Maximum powerpoint, 85°C and 50 % RH',
         type=float,
-        unit='hr',
-        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='hr'),
+        unit='h',
+        a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='h'),
     ) 
+
+
+    # Normalization
+    # TODO: add a routine that can populate this data from the measurement section
+    # Ensure that FF are between 0 and 1
+
 
 
 

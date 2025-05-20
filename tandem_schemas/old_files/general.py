@@ -5,6 +5,7 @@ from nomad.metainfo.metainfo import SchemaPackage
 
 m_package = SchemaPackage()
 
+
 class SubCellOrigin(ArchiveSection):
     """
     A section describing a sub cell in a tandem solar cell.
@@ -35,6 +36,7 @@ class General(ArchiveSection):
                     'Spectral_splitter',
                     'Wide_bandgap_cell_used_as_reflector', 
                     'Other']),
+        default='Other',
         a_eln=ELNAnnotation(component='EnumEditQuantity'),
     )
 
@@ -52,7 +54,7 @@ class General(ArchiveSection):
 
     photoabsorbers = Quantity(
         description='List of the photoabsorbers starting from the bottom of the device stack.',
-        type=MEnum(['Silicon', 'Perovskite', 'CIGS', 'CZTS', 'CIS', 'GaAs', 'OPV', 'OSC', 'DSSC', 'Quantum_dot']),
+        type=MEnum(['Silicon', 'Perovskite', 'CIGS', 'OPV', 'OSC', 'DSSC', 'BHJ']),
         shape=['*'],
         a_eln=ELNAnnotation(component='EnumEditQuantity'),
     )
@@ -81,6 +83,7 @@ class General(ArchiveSection):
     flexible = Quantity(
         description='TRUE if the device is flexible and bendable, FALSE if it is rigid.',
         type=bool,
+        default=False,
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
@@ -89,36 +92,42 @@ class General(ArchiveSection):
         TRUE if the device is semitransparent. That is usually only the case when there are no thick completely covering metal electrodes.
         FALSE if it is opaque.""",
         type=bool,
+        default=False,
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
     contains_textured_layers = Quantity(
         description='TRUE if the device contains textured layers with the purpose of light management.',
         type=bool,
+        default=False,
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
     bifacial = Quantity(
         description='True if the cell is bifacial, i.e. design to absorb light from both sides.',
         type=bool,
+        default=False,
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
     encapsulated = Quantity(
         description='True if the cell is encapsulated.',
         type=bool,
+        default=False,
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
     module = Quantity(
         description='TRUE if device is a module composed of several identical cells located side by side, either in series or in parallel.',
         type=bool,
+        default=False,
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
     contains_antireflective_coating = Quantity(
         description='TRUE if the device contains one or more anti reflective coatings or other layers specifically dealing with light management.',
         type=bool,
+        default=False,
         a_eln=ELNAnnotation(component='BoolEditQuantity'),
     )
 
@@ -156,20 +165,33 @@ class General(ArchiveSection):
         description="""A single string describing the combination of photoabsorbers in the cell. 
             Can be generated automatically from the photoabsorbers field.
             Example: "silicon-perovskite", "CIGS-Perovskite", "silicon-Perovskite-perovskite", etc.
-            """,
+            """
         type=str,
-        # a_eln=ELNAnnotation(component='StringEditQuantity'),
+        a_eln=ELNAnnotation(component='StringEditQuantity'),
     )      
     
-    stack_sequence = Quantity(
+    stack_sequence_string = Quantity(
         description="""A single string describing the stack sequence of the cell. 
             If a proper device stack section is provided, the stack sequence can be generated from that one. 
             This is a concatenation of the stack sequence, which is handy for searching and filtering the data.
-                """,
+                """
         type=str,
-        # a_eln=ELNAnnotation(component='StringEditQuantity'),
+        a_eln=ELNAnnotation(component='StringEditQuantity'),
     )    
        
+    stack_sequence = Quantity(
+        description="""
+        The stack sequence describing the cell.
+        - If two materials, e.g. A and B, are mixed in one layer, list the materials in alphabetic order and separate them with semicolons, as in (A; B)
+        - The perovskite layer is stated as “Perovskite”, regardless of composition, mixtures, dimensionality etc. There are plenty of other fields specifically targeting the perovskite.
+        - If a material is doped, or have an additive, state the pure material here and specify the doping in the columns specifically targeting the doping of those layers.
+        - There is no sharp well-defined boundary between a when a material is best considered as doped to when it is best considered as a mixture of two materials. When in doubt if your material is doped or a mixture, use the notation that best capture the metaphysical essence of the situation
+        - Use common abbreviations when possible but spell it out when there is risk for confusion. For consistency, please pay attention to the abbreviation specified under the headline Abbreviations found tandem instructions v4.0 document.
+                    """,
+        type=str,
+        shape=['*'],
+        a_eln=ELNAnnotation(component='StringEditQuantity'),
+    )
 
     # Subsections
     subcells = SubSection(
@@ -177,17 +199,16 @@ class General(ArchiveSection):
             The list should start with the bottom cell (i.e. the cell furthers from the sun) and work upwards. <br/> 
             For a monolithic device, there is no hard boundary between the top and the bottom cell, but it is usually quite clear if one part was bought commercially. <br/> 
             Each entry (subcell) in the list comes with the following key-value pairs.
-            """,
+            """
         section_def=SubCellOrigin,
         repeats=True,
     )
 
-    def normalize(self, archive, logger):
-        super().normalize(archive, logger)
-        
-        # Generate the photoabsorber string
-        if self.photoabsorbers and len(self.photoabsorbers) > 0:
-            self.photoabsorbers_string = '-'.join(self.photoabsorbers)
+    # Normalization
+    # TODO: add a normalization function that generates the:
+    #   stack sequence string and 
+    #   the stack sequence
+    #   Photoabsorbers_string
 
 
 m_package.__init_metainfo__()

@@ -33,7 +33,6 @@ class Reference(PublicationReference):
     data_entered_by_author = Quantity(
         type=bool,
         shape=[],
-        default=False,
         description="""
             TRUE if the data is formatted by the one making the device or by one the study's co-authors
             """,
@@ -58,14 +57,7 @@ class Reference(PublicationReference):
         a_eln=dict(component='RichTextEditQuantity'),
     )
 
-    part_of_initial_dataset = Quantity(
-        type=bool,
-        shape=[],
-        default=False,
-        description="""TRUE if the data is part of the original dataset"""
-    )
-
-    # Fields relevant for tracability in the original data hunt
+    # Fields relevant for traceability in the original data hunt
     ID_temp = Quantity(
         type=np.dtype(np.int64),
         shape=[],
@@ -79,7 +71,8 @@ class Reference(PublicationReference):
     ID = Quantity(
         type=np.dtype(np.int64),
         shape=[],
-        description="""ID in the NOMAD database""",
+        description="""
+                    """,
     )
 
     def normalize(self, archive, logger):
