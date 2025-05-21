@@ -1597,7 +1597,7 @@ class PostDepositionProcedure(DepositionSegment):
 
     duration = Quantity(
         type=float,
-        description='The time if hte operation from start to finish.',
+        description='The time if the operation from start to finish.',
         unit='minute',
         a_eln=ELNAnnotation(
             component='NumberEditQuantity', defaultDisplayUnit='minute'

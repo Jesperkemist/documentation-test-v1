@@ -65,7 +65,7 @@ class Reference(PublicationReference):
         description="""TRUE if the data is part of the original dataset"""
     )
 
-    # Fields relevant for tracability in the original data hunt
+    # Fields relevant for traceability in the original data hunt
     ID_temp = Quantity(
         type=np.dtype(np.int64),
         shape=[],

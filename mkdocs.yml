@@ -1,4 +1,4 @@
-site_name: Perovksite tandem documentation
+site_name: Perovksite Tandem Database. Documentation
 site_author: T. Jesper Jacobsson
 theme:
   name: material
@@ -19,9 +19,13 @@ theme:
       accent: deep purple
   features:
     # - navigation.expand
-    - navigation.sections
+    # - navigation.sections
+    - navigation.instant
     - navigation.tracking
     - navigation.path
+    - navigation.footer
+    - navigation.top
+    # - navigation.tabs
 
 plugins:
   - search
@@ -42,26 +46,42 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true 
+  - pymdownx.highlight:
+      anchor_linenums: true           
   - toc:
       permalink: true
 
 
+
 nav:
   - Home: index.md
-  - Reference data: reference_data.md
-  - General: general/general.md
-  - key performance metrics: key_performance_metrics.md
-  - Module_data: module/module_data.md  
-  - Measurements: 
-    - JV_measurements: measurements/JV.md
-    - EQE_measurements: measurements/EQE.md
-    - Stabilized_performance: measurements/Stabilized_performance.md
-    - Stability: measurements/Stability.md
-    - Outdoor_performance: measurements/Outdoor_performance.md
-    - Transmission: measurements/Transmission.md
-    - Flexibility: measurements/Flexibility.md
-  - Device_stack: 
-    - Summary: device_stack/device_stack_general.md
-    - Layers: device_stack/layers.md
-  - Experimental_procedures: experimental_procedures/experimental_procedures.md
-  - Encapsulation: encapsulation/encapsulation_data.md                                         
+  - Data Schemas: 
+    - Instructions: data_schemas/introduction.md
+    - data:
+      - general: data_schemas/general/general.md
+      - reference: data_schemas/reference/reference.md
+      - key_performance_metrics: data_schemas/key_performance_metrics/key_performance_metrics.md
+      - device_stack: 
+        - Top level: data_schemas/device_stack/top_level.md
+        - layers: data_schemas/device_stack/layers.md
+        - Experimental procedures: data_schemas/experimental_procedures/experimental_procedures.md
+      - measurements:
+        - jv: data_schemas/measurements/JV.md
+        - eqe: data_schemas/measurements/EQE.md
+        - stabilized_performance: data_schemas/measurements/Stabilized_performance.md
+        - stability: data_schemas/measurements/Stability.md
+        - outdoor_performance: data_schemas/measurements/Outdoor_performance.md
+        - transmission: data_schemas/measurements/Transmission.md
+        - flexibility: data_schemas/measurements/Flexibility.md
+
+      - encapsulation: data_schemas/encapsulation/encapsulation_data.md 
+      - module_data: data_schemas/module/module_data.md   
+  - Resources: resources.md
+  - How to cite: how_to_cite.md
+  - How to guides: how_to_guides/how_to_guides.md
+  - Contribute data: contribute_data.md
+  - How to extend the data schemas: extend_the_data_schemas.md
+  - Instructions for authors: instructions_for_authors.md
+  - Contact: contacts.md
