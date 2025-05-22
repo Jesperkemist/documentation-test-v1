@@ -1,0 +1,610 @@
+{
+    "data": {
+        "m_def": "perovskite_solar_cell_database.schema_packages.tandem.schema.PerovskiteTandemSolarCell",
+        "reference": {
+            "publication_date": "2020-03-09T00:00:00",
+            "journal": "Nature Communications",
+            "sample_id": 894,
+            "name_of_person_entering_the_data": "Ashish Kulkarni",
+            "data_entered_by_author": false,
+            "part_of_initial_dataset": true,
+            "DOI_number": "10.1038/s41467-020-15077-3",
+            "publication_authors": [
+                "Chen et al."
+            ],
+            "ID_temp": 35
+        },
+        "general": {
+            "number_of_junctions": 2,
+            "number_of_terminals": 4,
+            "architecture": "Stacked",
+            "flexible": false,
+            "semitransparent": false,
+            "encapsulated": false,
+            "active_area": 0.049,
+            "photoabsorbers": [
+                "Quantum_dot",
+                "Perovskite"
+            ],
+            "photoabsorbers_string": "Quantum_dot-Perovskite",
+            "photoabsorbers_bandgaps": [
+                null,
+                1.63
+            ]
+        },
+        "key_performance_metrics": {
+            "power_conversion_efficiency_stabilized": 24.0,
+            "power_conversion_efficiency": 24.0
+        },
+        "device_stack": {
+            "stack_sequence": "SLG | ITO | ZnO-np | PbS-QD | NFA | MoO3 | Ag-grid | Air | SLG | IZrO | SnO2 | Perovskite | Spiro-MeOTAD | MoO3 | IZO | Ag-grid | MgF2",
+            "layers": [
+                {
+                    "layer_index": 1,
+                    "functionality": "substrate",
+                    "device_subset": 1,
+                    "name": "SLG",
+                    "components": [
+                        {
+                            "name": "SLG",
+                            "functionality": "majority_phase"
+                        }
+                    ]
+                },
+                {
+                    "layer_index": 2,
+                    "functionality": "back_contact",
+                    "device_subset": 1,
+                    "name": "ITO",
+                    "properties": {
+                        "thickness": {
+                            "value": 150.0
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "ITO",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "Sputtering",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Sputtering"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 3,
+                    "functionality": "electron_transport_layer",
+                    "device_subset": 1,
+                    "name": "ZnO-np",
+                    "properties": {
+                        "thickness": {
+                            "value": 150.0
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "ZnO-np",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "SpinCoating",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 4,
+                    "functionality": "photoabsorber",
+                    "device_subset": 1,
+                    "name": "PbS-qd",
+                    "quantum_dots": {
+                        "material": "PbS"
+                    },
+                    "properties": {
+                        "thickness": {
+                            "value": 150
+                        },
+                        "band_gap": {
+                            "graded": false
+                        }
+                    },
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "SpinCoating",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 5,
+                    "functionality": "hole_transport_layer",
+                    "device_subset": 1,
+                    "name": "NFA",
+                    "components": [
+                        {
+                            "name": "NFA",
+                            "functionality": "majority_phase"
+                        }
+                    ]
+                },
+                {
+                    "layer_index": 6,
+                    "functionality": "front_contact",
+                    "device_subset": 1,
+                    "name": "MoO3",
+                    "properties": {
+                        "thickness": {
+                            "value": 10.0
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "MoO3",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "Evaporation",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 7,
+                    "functionality": "front_contact",
+                    "device_subset": 1,
+                    "name": "Ag-grid",
+                    "properties": {
+                        "thickness": {
+                            "value": 120.0
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "Ag-grid",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "Evaporation",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 8,
+                    "functionality": "air_gap",
+                    "name": "Air",
+                    "components": [
+                        {
+                            "name": "Air",
+                            "functionality": "majority_phase"
+                        }
+                    ]
+                },
+                {
+                    "layer_index": 9,
+                    "functionality": "substrate",
+                    "device_subset": 2,
+                    "name": "SLG",
+                    "components": [
+                        {
+                            "name": "SLG",
+                            "functionality": "majority_phase"
+                        }
+                    ]
+                },
+                {
+                    "layer_index": 10,
+                    "functionality": "electron_transport_layer",
+                    "device_subset": 2,
+                    "name": "IZrO",
+                    "properties": {
+                        "thickness": {
+                            "value": 100.0
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "IZrO",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "Sputtering",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Sputtering"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 11,
+                    "functionality": "electron_transport_layer",
+                    "device_subset": 2,
+                    "name": "SnO2",
+                    "components": [
+                        {
+                            "name": "SnO2",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "SpinCoating",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 12,
+                    "functionality": "photoabsorber",
+                    "device_subset": 2,
+                    "name": "Perovskite",
+                    "perovskite": {
+                        "has_a_2D_perovskite_capping_layer": false,
+                        "lead_free": false,
+                        "inorganic": false,
+                        "composition": {
+                            "band_gap": 1.63,
+                            "sample_type": "Polycrystalline film",
+                            "dimensionality": "3D",
+                            "short_form": "CsFAMAPbBrI",
+                            "long_form": "CsnanFAMAPbBrnanI",
+                            "ions_a_site": [
+                                {
+                                    "ion": "Cs",
+                                    "molecular_formula": "Cs+",
+                                    "smile": "[Cs+]",
+                                    "common_name": "Cesium ion",
+                                    "iupac_name": "Cesium(1+)",
+                                    "cas_number": "18459-37-5",
+                                    "source_compound_smile": "[Cs]",
+                                    "source_compound_iupac_name": "Cesium",
+                                    "source_compound_cas_number": "7440-46-2",
+                                    "abbreviation": "Cs"
+                                },
+                                {
+                                    "ion": "FA",
+                                    "molecular_formula": "CH5N2+",
+                                    "smile": "C(=[NH2+])N",
+                                    "common_name": "Formamidinium",
+                                    "iupac_name": "aminomethylideneazanium",
+                                    "cas_number": "nan",
+                                    "source_compound_smile": "C(=N)N",
+                                    "source_compound_iupac_name": "methanimidamide",
+                                    "source_compound_cas_number": "463-52-5",
+                                    "abbreviation": "FA"
+                                },
+                                {
+                                    "ion": "MA",
+                                    "molecular_formula": "CH6N+",
+                                    "smile": "C[NH3+]",
+                                    "common_name": "Methylammonium",
+                                    "iupac_name": "methylazanium",
+                                    "cas_number": "17000-00-9",
+                                    "source_compound_smile": "CN",
+                                    "source_compound_iupac_name": "methanamine",
+                                    "source_compound_cas_number": "74-89-5",
+                                    "abbreviation": "MA"
+                                }
+                            ],
+                            "ions_b_site": [
+                                {
+                                    "ion": "Pb",
+                                    "coefficient": 1.0,
+                                    "molecular_formula": "Pb2+",
+                                    "smile": "[Pb+2]",
+                                    "common_name": "Lead",
+                                    "iupac_name": "lead(2+)",
+                                    "cas_number": "14280-50-3",
+                                    "source_compound_smile": "[Pb]",
+                                    "source_compound_iupac_name": "Lead",
+                                    "source_compound_cas_number": "7439-92-1",
+                                    "abbreviation": "Pb"
+                                }
+                            ],
+                            "ions_x_site": [
+                                {
+                                    "ion": "Br",
+                                    "molecular_formula": "Br-",
+                                    "smile": "[Br-]",
+                                    "common_name": "Bromide",
+                                    "iupac_name": "Bromide",
+                                    "cas_number": "24959-67-9",
+                                    "source_compound_smile": "BrBr",
+                                    "source_compound_iupac_name": "molecular bromine",
+                                    "source_compound_cas_number": "7726-95-6",
+                                    "abbreviation": "Br"
+                                },
+                                {
+                                    "ion": "I",
+                                    "molecular_formula": "I-",
+                                    "smile": "[I-]",
+                                    "common_name": "Iodide",
+                                    "iupac_name": "Iodide",
+                                    "cas_number": "20461-54-5",
+                                    "source_compound_smile": "II",
+                                    "source_compound_iupac_name": "molecular iodine",
+                                    "source_compound_cas_number": "7553-56-2",
+                                    "abbreviation": "I"
+                                }
+                            ]
+                        }
+                    },
+                    "properties": {
+                        "crystallinity": {
+                            "value": "polycrystalline"
+                        },
+                        "band_gap": {
+                            "value": 1.63,
+                            "graded": false,
+                            "determined_by": "eqe"
+                        }
+                    },
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "antisolvent": true,
+                        "duration": 25.0,
+                        "segments": [
+                            {
+                                "method": "SpinCoating",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating",
+                                "solution": {
+                                    "components": [
+                                        {
+                                            "name": "DMF"
+                                        },
+                                        {
+                                            "name": "DMSO"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "method": "Heating",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Heating",
+                                "temperature_segments": [
+                                    {
+                                        "temperature_end": 100.0,
+                                        "time_of_segment": 25.0
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 13,
+                    "functionality": "hole_transport_layer",
+                    "device_subset": 2,
+                    "name": "Spiro-MeOTAD",
+                    "components": [
+                        {
+                            "name": "Spiro-MeOTAD",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "SpinCoating",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 14,
+                    "functionality": "front_contact",
+                    "device_subset": 2,
+                    "name": "MoO3",
+                    "properties": {
+                        "thickness": {
+                            "value": 120.0
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "MoO3",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "Evaporation",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 15,
+                    "functionality": "front_contact",
+                    "device_subset": 2,
+                    "name": "IZO",
+                    "properties": {
+                        "thickness": {
+                            "value": 100.0
+                        }
+                    },
+                    "components": [
+                        {
+                            "name": "IZO",
+                            "functionality": "majority_phase"
+                        }
+                    ],
+                    "deposition_procedure": {
+                        "substrate_layer": "on_lower_layer",
+                        "segments": [
+                            {
+                                "method": "Sputtering",
+                                "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Sputtering"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "layer_index": 16,
+                    "functionality": "front_contact",
+                    "device_subset": 2,
+                    "name": "Ag-grid",
+                    "components": [
+                        {
+                            "name": "Ag-grid",
+                            "functionality": "majority_phase"
+                        }
+                    ]
+                },
+                {
+                    "layer_index": 17,
+                    "functionality": "anti_reflection",
+                    "device_subset": 2,
+                    "name": "MgF2",
+                    "components": [
+                        {
+                            "name": "MgF2",
+                            "functionality": "majority_phase"
+                        }
+                    ]
+                }
+            ]
+        },
+        "measurements": {
+            "jv": [
+                {
+                    "certified": false,
+                    "device_subset": 0,
+                    "measurement_conditions": {
+                        "scan_speed": 100.0
+                    },
+                    "illumination": {
+                        "intensity": 100.0,
+                        "mask": false
+                    },
+                    "light_source": {
+                        "spectrum": "AM1.5",
+                        "light_source": "Solar_simulator_unspecified",
+                        "light_source_model": "Newport 91150 V"
+                    },
+                    "light_regime": "standard_light",
+                    "results": {
+                        "power_conversion_efficiency": 24.0
+                    },
+                    "environmental_conditions": {
+                        "atmosphere": "N2"
+                    }
+                },
+                {
+                    "device_subset": 1,
+                    "measurement_conditions": {
+                        "scan_speed": 100.0
+                    },
+                    "illumination": {
+                        "intensity": 100.0,
+                        "mask": false
+                    },
+                    "light_source": {
+                        "spectrum": "AM1.5",
+                        "light_source": "Solar_simulator_unspecified",
+                        "light_source_model": "Newport 91150 V"
+                    },
+                    "light_regime": "standard_light",
+                    "results": {
+                        "short_circuit_current_density": 12.2,
+                        "open_circuit_voltage": 0.62,
+                        "fill_factor": 0.66,
+                        "power_conversion_efficiency": 5.0
+                    }
+                },
+                {
+                    "device_subset": 2,
+                    "measurement_conditions": {
+                        "scan_speed": 100.0
+                    },
+                    "illumination": {
+                        "intensity": 100.0,
+                        "mask": false
+                    },
+                    "light_source": {
+                        "spectrum": "AM1.5",
+                        "light_source": "Solar_simulator_unspecified",
+                        "light_source_model": "Newport 91150 V"
+                    },
+                    "light_regime": "standard_light",
+                    "results": {
+                        "short_circuit_current_density": 22.3,
+                        "open_circuit_voltage": 1.12,
+                        "fill_factor": 0.77,
+                        "power_conversion_efficiency": 19.4
+                    }
+                }
+            ],
+            "stabilized_performance": [
+                {
+                    "light_regime": "standard_light",
+                    "duration": 1.0,
+                    "device_subset": 0,
+                    "measurement_details": {
+                        "type_of_measurement": "maximum_power_point_tracking"
+                    },
+                    "results": {
+                        "power_conversion_efficiency": 24.0
+                    }
+                }
+            ],
+            "eqe": [
+                {
+                    "device_subset": 0
+                },
+                {
+                    "device_subset": 1
+                },
+                {
+                    "device_subset": 2,
+                    "results": {
+                        "integrated_short_circuit_current_density": 21.0
+                    }
+                }
+            ],
+            "transmission": [
+                {
+                    "results": {
+                        "average_transmission": 85.0
+                    },
+                    "device_subset": 2
+                }
+            ]
+        }
+    }
+}
