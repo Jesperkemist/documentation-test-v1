@@ -1,5 +1,5 @@
 ??? "deposition_procedure"
-    The deposition procedure for the layer. The deposition of a layer could involve several deposition steps, or segments. 
+    The deposition procedure for the layer. The deposition of a layer could involve several deposition steps, or steps. 
 
     ## Top level
     ??? "substrate_layer"
@@ -50,8 +50,8 @@
         * example: 2020-07-08
 
     ## Subsections
-    ??? "segments"
-        List of all deposition segments that is used to deposit the layer. 
+    ??? "steps"
+        List of all deposition steps that is used to deposit the layer. 
         This will probably never be a compleat list of possible deposition procedures. However, using the methods described here as templates, it is possible define data schemas for new procedures. 
 
         ??? "method"
@@ -78,6 +78,19 @@
                 * UVOzonTreatment
                 * ...
 
+        ??? "m_def"
+            A keyword that needs to be included to be abel to utilize normalization features in NOMAD
+            For methods that has been defined in NOMAD, this should be on the form
+            perovskite_solar_cell_database.schema_packages.tandem.device_stack.METHOD
+            where METHOD could be AtomicLayerDeposition, Heating, SpinCoating, etc.
+
+            * type: str
+            * examples: 
+                * perovskite_solar_cell_database.schema_packages.tandem.device_stack.AtomicLayerDeposition
+                * perovskite_solar_cell_database.schema_packages.tandem.device_stack.Heating
+                * perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating
+
+
         ???+ "Procedure dependent key-value pairs and subsections"
             ...
 
@@ -88,7 +101,7 @@
 
 
     ??? "sample_history"
-        A description of the conditions under which the sample have been stored between the finalization of the last segment and this segment
+        A description of the conditions under which the sample have been stored between the finalization of the last step and this step
 
         {% include "data_schemas/experimental_procedures/subsections/environmental_conditions_deposition.md" %}
 

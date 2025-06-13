@@ -1,19 +1,19 @@
-??? "time_of_segment"
-    Time of the segment.
+??? "time_of_step"
+    Time of the step.
 
     * type: float
     * unit: minute
     * example: 10
 
 ??? "temperature_start"
-    Temperature at the start of the segment.
+    Temperature at the start of the step.
 
     * type: float
     * unit: C
     * example: 50    
 
 ??? "temperature_end"
-    Temperature at the end of the segment.
+    Temperature at the end of the step.
 
     * type: float
     * unit: C

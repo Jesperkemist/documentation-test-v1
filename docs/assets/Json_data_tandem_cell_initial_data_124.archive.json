@@ -60,7 +60,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "Evaporation",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
@@ -86,7 +86,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "Evaporation",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
@@ -112,7 +112,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "Evaporation",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
@@ -232,7 +232,7 @@
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
                         "duration": 30.0,
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "SpinCoating",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating",
@@ -261,10 +261,10 @@
                             {
                                 "method": "Heating",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Heating",
-                                "temperature_segments": [
+                                "temperature_steps": [
                                     {
                                         "temperature_end": 100.0,
-                                        "time_of_segment": 30.0
+                                        "time_of_step": 30.0
                                     }
                                 ]
                             }
@@ -289,7 +289,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "SpinCoating",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating"
@@ -315,7 +315,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "Evaporation",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
@@ -341,7 +341,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "AtomicLayerDeposition",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.AtomicLayerDeposition"
@@ -367,7 +367,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "Evaporation",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Evaporation"
@@ -514,7 +514,7 @@
                         "substrate_layer": "on_upper_layer",
                         "antisolvent": true,
                         "duration": 30.0,
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "SpinCoating",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating",
@@ -532,10 +532,10 @@
                             {
                                 "method": "Heating",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Heating",
-                                "temperature_segments": [
+                                "temperature_steps": [
                                     {
                                         "temperature_end": 100.0,
-                                        "time_of_segment": 30.0
+                                        "time_of_step": 30.0
                                     }
                                 ]
                             }
@@ -555,7 +555,7 @@
                     ],
                     "deposition_procedure": {
                         "substrate_layer": "on_upper_layer",
-                        "segments": [
+                        "steps": [
                             {
                                 "method": "SpinCoating",
                                 "m_dif": "perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating"

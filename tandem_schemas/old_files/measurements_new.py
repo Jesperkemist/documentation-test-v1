@@ -829,12 +829,12 @@ class StabilityDetails(ArchiveSection):
     )
 
 
-class LoadCycleSegments(ArchiveSection):
+class LoadCycleSteps(ArchiveSection):
     """
     Details for load cycling measurements.
     """  
     duration = Quantity(
-        description='Duration of the segment.',
+        description='Duration of the step.',
         type=float,
         unit='minute',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='minute'),
@@ -899,15 +899,15 @@ class LoadCycle(ArchiveSection):
         a_eln=ELNAnnotation(component='NumberEditQuantity'),
     )  
     
-    number_of_segments_in_cycle = Quantity(
-        description='The number of segments in the load cycle.',
+    number_of_steps_in_cycle = Quantity(
+        description='The number of steps in the load cycle.',
         type=int,
         a_eln=ELNAnnotation(component='NumberEditQuantity'),
     ) 
 
-    segments = SubSection(
-        section_def=LoadCycleSegments,
-        description='Details for the segments in the load cycle.',
+    steps = SubSection(
+        section_def=LoadCycleSteps,
+        description='Details for the steps in the load cycle.',
         repeats=True,
     )
 

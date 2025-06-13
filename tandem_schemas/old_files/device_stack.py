@@ -1288,9 +1288,9 @@ class LayerProperties(ArchiveSection):
 
 ### Deposition procedures general sections
 
-class DepositionSegment(ArchiveSection):
+class DepositionStep(ArchiveSection):
     """
-    This is the section for a deposition segment of a layer.
+    This is the section for a deposition step of a layer.
     """
     # # Deposition method
     # method = Quantity(
@@ -1314,9 +1314,9 @@ class DepositionSegment(ArchiveSection):
     #     a_eln=ELNAnnotation(component='EnumEditQuantity'),
     # )
 
-    # time_from_last_segment = Quantity(
-    #     description="""The time from the finalization of the last segment 
-    #     and the start of this segment. If this is the first segment, this would be 0.""",
+    # time_from_last_step = Quantity(
+    #     description="""The time from the finalization of the last step 
+    #     and the start of this step. If this is the first step, this would be 0.""",
     #     type=float,
     #     unit='minute',
     #     a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='minute'),
@@ -1331,12 +1331,12 @@ class DepositionSegment(ArchiveSection):
 
 
 ### Synthetic procedures
-class ALDSegment(ArchiveSection):
+class ALDStep(ArchiveSection):
     """
-    ALD segments
+    ALD steps
     """
-    time_of_segment = Quantity(
-        description='The length of the segment.',
+    time_of_step = Quantity(
+        description='The length of the step.',
         type=float,
         unit='s',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='s'),
@@ -1356,27 +1356,27 @@ class ALDSegment(ArchiveSection):
     )
 
 
-class SpinCoatingSegments(ArchiveSection):
+class SpinCoatingSteps(ArchiveSection):
     """
-    A spin-coating program can be composed of several different segments. 
-    This is a repeating section for describing all the spin-coating segments
+    A spin-coating program can be composed of several different steps. 
+    This is a repeating section for describing all the spin-coating steps
     """
     duration = Quantity(
-        description='The length of the segment.',
+        description='The length of the step.',
         type=float,
         unit='s',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='s'),
     )
     
     speed_start = Quantity(
-        description='The spin speed of the start of the segment.',
+        description='The spin speed of the start of the step.',
         type=float,
         unit='rpm',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='rpm'),
     )
 
     speed_end = Quantity(
-        description='The spin speed of the end of the segment.',
+        description='The spin speed of the end of the step.',
         type=float,
         unit='rpm',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='rpm'),
@@ -1433,26 +1433,26 @@ class Dipping(ArchiveSection):
     )
 
 
-class TemperatureSegment(ArchiveSection):
+class TemperatureStep(ArchiveSection):
     """
-    Details for heaating segments
+    Details for heaating steps
     """
-    time_of_segment = Quantity(
-        description='Time of the segment.',
+    time_of_step = Quantity(
+        description='Time of the step.',
         type=float,
         unit='minute',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='minute'),
     )
 
     temperature_start = Quantity(
-        description='Temperature at the start of the segment.',
+        description='Temperature at the start of the step.',
         type=float,
         unit='C',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
     )    
 
     temperature_end = Quantity(
-        description='Temperature at the end of the segment.',
+        description='Temperature at the end of the step.',
         type=float,
         unit='C',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='C'),
@@ -1466,12 +1466,12 @@ class TemperatureSegment(ArchiveSection):
     )  
 
 
-class SputteringSegment(ArchiveSection):
+class SputteringStep(ArchiveSection):
     """
-    Details for heaating segments
+    Details for heaating steps
     """
-    time_of_segment = Quantity(
-        description='Time of the segment.',
+    time_of_step = Quantity(
+        description='Time of the step.',
         type=float,
         unit='minute',
         a_eln=ELNAnnotation(component='NumberEditQuantity', defaultDisplayUnit='minute'),
@@ -1584,7 +1584,7 @@ class GasQuenchingDetails(ArchiveSection):
     )    
 
 
-class PostDepositionProcedure(DepositionSegment):
+class PostDepositionProcedure(DepositionStep):
     """
     Post deposition procedure. 
     """
@@ -1613,9 +1613,9 @@ class PostDepositionProcedure(DepositionSegment):
     )
 
     # Subsections
-    segments = SubSection(
-        section_def=DepositionSegment,
-        description='The segments of the deposition procedure.',
+    steps = SubSection(
+        section_def=DepositionStep,
+        description='The steps of the deposition procedure.',
         repeats=True,
     )
 
@@ -1632,7 +1632,7 @@ class PostDepositionProcedure(DepositionSegment):
     )
 
 
-class AtomicLayerDeposition(DepositionSegment):
+class AtomicLayerDeposition(DepositionStep):
     """
     Details for an ALD process.
     """
@@ -1678,9 +1678,9 @@ class AtomicLayerDeposition(DepositionSegment):
     )
 
     # Subsections
-    segments = SubSection(
-        section_def=ALDSegment,
-        description='Details about the four ALD segments.',
+    steps = SubSection(
+        section_def=ALDStep,
+        description='Details about the four ALD steps.',
         repeats=True,  
     ) 
 
@@ -1689,7 +1689,7 @@ class AtomicLayerDeposition(DepositionSegment):
         self.method = 'atomic_layer_deposition' 
 
 
-class ChemicalBathDeposition(DepositionSegment):
+class ChemicalBathDeposition(DepositionStep):
     """
     Details for a chemical bath deposition process.
     """
@@ -1750,7 +1750,7 @@ class ChemicalBathDeposition(DepositionSegment):
         self.method = 'chemical_bath_deposition'      
 
 
-class Cleaning(DepositionSegment):
+class Cleaning(DepositionStep):
     """
     Cleaning procedures
     """
@@ -1794,7 +1794,7 @@ class Cleaning(DepositionSegment):
         self.method = 'cleaning'  
 
 
-class DipCoating(DepositionSegment):
+class DipCoating(DepositionStep):
     """
     Details for a dip coating process.
     """
@@ -1868,7 +1868,7 @@ class DipCoating(DepositionSegment):
         self.method = 'dip_coating'  
 
 
-class DoctorBlading(DepositionSegment):
+class DoctorBlading(DepositionStep):
     """
     Details for a doctor blading process.
     """
@@ -1945,7 +1945,7 @@ class DoctorBlading(DepositionSegment):
         self.method = 'doctor_blading'  
 
 
-class Evaporation(DepositionSegment):
+class Evaporation(DepositionStep):
     """
     Details for a evaporation process.
     """
@@ -2016,7 +2016,7 @@ class Evaporation(DepositionSegment):
         self.method = 'evaporation'  
 
 
-class Heating(DepositionSegment):
+class Heating(DepositionStep):
     """
     Details for a heating process.
     """
@@ -2042,9 +2042,9 @@ class Heating(DepositionSegment):
     )
     
     # Subsections
-    temperature_segments = SubSection(
-        section_def=TemperatureSegment,
-        description='Details about the temperature segments.',
+    temperature_steps = SubSection(
+        section_def=TemperatureStep,
+        description='Details about the temperature steps.',
         repeats=True,  
     )
 
@@ -2058,7 +2058,7 @@ class Heating(DepositionSegment):
         self.method = 'heating'    
     
 
-class InkjetPrinting(DepositionSegment):
+class InkjetPrinting(DepositionStep):
     """
     Details for a inkjet printing process.
     """
@@ -2146,7 +2146,7 @@ class IonExchangeByDipping(DipCoating):
         self.method = 'ion_exchange_by_dipping'  
 
 
-class IonExchangeByGasDiffusion(DepositionSegment):
+class IonExchangeByGasDiffusion(DepositionStep):
     """
     Details for a process where ions in a perovksite is exchanged by 
     a gas diffusion process 
@@ -2198,7 +2198,7 @@ class IonExchangeByGasDiffusion(DepositionSegment):
         self.method = 'ion_exchange_by_gas_diffusion'  
 
 
-class SlotDyeCoating(DepositionSegment):
+class SlotDyeCoating(DepositionStep):
     """
     Details for a slot dye coatig process
     """
@@ -2275,9 +2275,9 @@ class SlotDyeCoating(DepositionSegment):
         self.method = 'slot_dye_coating'  
 
 
-class SpinCoating(DepositionSegment):
+class SpinCoating(DepositionStep):
     """
-    This is the section for a spin coating segment of a layer.
+    This is the section for a spin coating step of a layer.
     """
     # Boolean quantities
     dynamic_spin_coating = Quantity(
@@ -2359,9 +2359,9 @@ class SpinCoating(DepositionSegment):
     )
 
     # Subsections
-    spin_coating_segments = SubSection(
-        section_def=SpinCoatingSegments,
-        description='Description of each spin-coating segment.',
+    spin_coating_steps = SubSection(
+        section_def=SpinCoatingSteps,
+        description='Description of each spin-coating step.',
         repeats=True,   
     )
     
@@ -2390,7 +2390,7 @@ class SpinCoating(DepositionSegment):
         self.method = 'spin-coating'  
 
 
-class SprayCoating(DepositionSegment):
+class SprayCoating(DepositionStep):
     """
     Details for a spray coating process
     """
@@ -2487,7 +2487,7 @@ class SprayCoating(DepositionSegment):
         self.method = 'slot_dye_coating'  
 
 
-class Sputtering(DepositionSegment):
+class Sputtering(DepositionStep):
     """
     Details for a sputtering process
     """
@@ -2532,9 +2532,9 @@ class Sputtering(DepositionSegment):
     )
 
     # Subsections
-    segments = SubSection(
-        section_def=SputteringSegment,
-        description='Details about the sputtering segments.',
+    steps = SubSection(
+        section_def=SputteringStep,
+        description='Details about the sputtering steps.',
         repeats=True,  
     )    
     
@@ -2554,7 +2554,7 @@ class Sputtering(DepositionSegment):
         self.method = 'sputtering'  
 
 
-class UVOzonTreatment(DepositionSegment):
+class UVOzonTreatment(DepositionStep):
     """
     UVOzon treatment
     """
@@ -2675,10 +2675,10 @@ class DepositionProcedure(ArchiveSection):
     )
     
     ## Subsections
-    # Deposition segments
-    segments = SubSection(
-        section_def=DepositionSegment,
-        description='The segments of the deposition procedure.',
+    # Deposition steps
+    steps = SubSection(
+        section_def=DepositionStep,
+        description='The steps of the deposition procedure.',
         repeats=True,
     )
     

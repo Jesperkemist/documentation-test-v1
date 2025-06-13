@@ -1,5 +1,5 @@
-??? "time_of_segment"
-    Time of the segment. 
+??? "time_of_step"
+    Time of the step. 
 
     * type: float
     * unit: minute

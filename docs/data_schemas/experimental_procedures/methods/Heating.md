@@ -26,7 +26,7 @@
 
 ### Subsections
 ??? "temperature_segments"
-    Repeating section. Describing each temperature segment in the program
+    Repeating section. Describing each temperature step in the program
     {% include "data_schemas/experimental_procedures/subsections/temperature_segment.md" %} 
 
 ??? "environmental_conditions"

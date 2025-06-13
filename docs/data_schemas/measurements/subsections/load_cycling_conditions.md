@@ -4,17 +4,17 @@
     * type: int
     * example: 10  
 
-??? "number_of_segments_in_cycle"
-    The number of segments in the load cycle.
+??? "number_of_steps_in_cycle"
+    The number of steps in the load cycle.
 
     * type: int
     * example: 10 
 
-??? "segments"
-    A repeating section detailing the conditions in each load segment
+??? "steps"
+    A repeating section detailing the conditions in each load step
 
     ??? "duration"
-        The duration of the segment
+        The duration of the step
 
         * type: float
         * unit: minute

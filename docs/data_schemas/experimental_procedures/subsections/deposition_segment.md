@@ -1,6 +1,6 @@
-??? "time_from_last_segment"
-    The time from the finalization of the last segment 
-    and the start of this segment. If this is the first segment, this would be 0.
+??? "time_from_last_step"
+    The time from the finalization of the last step 
+    and the start of this step. If this is the first step, this would be 0.
 
     type: float
     unit: minute

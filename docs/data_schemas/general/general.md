@@ -190,12 +190,21 @@ Useful quantities that automatically can be derived from other data
 
 
 ??? "stack_sequence"
-    A single string describing the stack sequence of the cell. <br/>
-    A concatenation of the stack sequence, which is handy for searching and filtering the data 
-    If a proper device stack section is provided, the stack sequence can be generated automatically. <br/> 
+    A list of the materials in the layers of the stack. <br/>  
+    If a proper device stack section is provided, the stack sequence can be generated from that one.
+
+    Start with the layer in the bottom of the device (i.e. that is furthest from the sun) and work up from that.<br/> 
+    If two materials, e.g. A and B, are mixed in one layer, list the materials in alphabetic order and separate them with semicolons, as in (A; B)<br/> 
+    The perovskite layer is stated as “Perovskite”, regardless of composition, mixtures, dimensionality etc. Those details are provided elsewhere. <br/> 
+    Use common abbreviations when possible but spell them out when there is risk for confusion. 
 
     * type: str
     * examples: 
         * "Ag | AZO | Silicon | ITO | 2PACz | Perovskite | LiF | C60 | SnO2 | AZO | Ag-grid | LiF"
         * "Ag | MoO3 | OPV | PFNBr | Ag | MoO3 | P3HT | Perovskite | SnO2 | ITO | SLG"
-      
+
+??? "number_of_layers"
+    Number of layers in the stack.
+
+    * type: int
+    * example: 12

@@ -13,7 +13,7 @@ The perovskite data file has one top level called “data”: {}. <br>
     The top level has one key-value pair and a variable number of subsections that can be added based on the type of available data.  
 
 
-    ???+ "d_def"
+    ???+ "m_def"
         Should be: "perovskite_solar_cell_database.schema_packages.tandem.schema.PerovskiteTandemSolarCell" <br>
         This is needed to upload the file to the NOMAD database
 

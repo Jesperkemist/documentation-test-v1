@@ -62,8 +62,8 @@ The stabilized efficiency under standard illumination.
 ### Stability data
 There are numerous different protocols by which device stability can be measured. For this section of key performance metrics, the following four are some of the more commonly reported metrics. Additional metrics are found in the dedicated stability section. Further details about the measurement in the dedicated stability measurement section.
 
-??? "pce_1000h_isos_l1"
-    Power conversion efficiency after 1000 h under ISOS-L1 conditions, 
+??? "pce_1000h_isos_l1_start"
+    Power conversion efficiency at hte start of the measurement under ISOS-L1 conditions, 
         i.e. AM 1.5, Maximum powerpoint (or held at constant potential close to the Vmp), 
         room temperature, inert atmosphere. 
 
@@ -71,7 +71,23 @@ There are numerous different protocols by which device stability can be measured
     * unit: %
     * example: 20.1   
 
-??? "pce_1000h_isos_l3"
+??? "pce_1000h_isos_l1_end"
+    Power conversion efficiency after 1000 h under ISOS-L1 conditions, 
+        i.e. AM 1.5, Maximum powerpoint (or held at constant potential close to the Vmp), 
+        room temperature, inert atmosphere. 
+
+    * type: float
+    * unit: %
+    * example: 20.1  
+
+??? "pce_1000h_isos_l3_start"
+    Power conversion efficiency at the start if the measurement under ISOS-L3 conditions, i.e. AM 1.5, Maximum powerpoint, 85°C and 50 % RH'. 
+
+    * type: float
+    * unit: %
+    * example: 14.2  
+
+??? "pce_1000h_isos_l3_end"
     Power conversion efficiency after 1000 h under ISOS-L3 conditions, i.e. AM 1.5, Maximum powerpoint, 85°C and 50 % RH'. 
 
     * type: float

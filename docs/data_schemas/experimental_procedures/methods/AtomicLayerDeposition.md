@@ -44,7 +44,7 @@
     * example: homebuilt_system
 
 ### Subsections
-??? "segments"
-    Details about the four ALD segments.
+??? "steps"
+    Details about the four ALD steps.
     {% include "data_schemas/experimental_procedures/subsections/ald_segment.md" %} 
    

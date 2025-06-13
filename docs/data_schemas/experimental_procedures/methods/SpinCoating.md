@@ -79,24 +79,24 @@
 
 ### Sub sections
 ??? "spin_coating_segments"
-    A spin-coating program can be composed of several different segments. This is a repeating section for describing all the spin-coating segments.
+    A spin-coating program can be composed of several different steps. This is a repeating section for describing all the spin-coating steps.
 
     ??? "duration"
-        The length of the segment. 
+        The length of the step. 
 
         * type: float
         * unit: s
         * example: 60
 
     ??? "speed_start"
-        The spin speed of the start of the segment.
+        The spin speed of the start of the step.
 
         * type: float
         * unit: rpm
         * example: 0
 
     ??? "speed_end"
-        The spin speed of the end of the segment.
+        The spin speed of the end of the step.
 
         * type: float
         * unit: rpm

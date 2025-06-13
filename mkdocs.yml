@@ -65,8 +65,17 @@ nav:
       - reference: data_schemas/reference/reference.md
       - key_performance_metrics: data_schemas/key_performance_metrics/key_performance_metrics.md
       - device_stack: 
-        - Top level: data_schemas/device_stack/top_level.md
-        - layers: data_schemas/device_stack/layers.md
+        - Information: data_schemas/device_stack/information.md
+        - Layers:
+          - GeneralLayer: data_schemas/device_stack/layers/GeneralLayer.md
+          - Perovskite: data_schemas/device_stack/layers/Photoabsorber_Perovskite.md
+          - Silicon: data_schemas/device_stack/layers/Photoabsorber_Silicon.md
+          - CIGS: data_schemas/device_stack/layers/Photoabsorber_CIGS.md
+          - CZTS: data_schemas/device_stack/layers/Photoabsorber_CZTS.md
+          - GaAs: data_schemas/device_stack/layers/Photoabsorber_GaAs.md
+          - OPV: data_schemas/device_stack/layers/Photoabsorber_OPV.md
+          - DSSC: data_schemas/device_stack/layers/Photoabsorber_DSSC.md
+          - QuantumDot: data_schemas/device_stack/layers/Photoabsorber_QuantumDot.md
         - Experimental procedures: data_schemas/experimental_procedures/experimental_procedures.md
       - measurements:
         - jv: data_schemas/measurements/JV.md

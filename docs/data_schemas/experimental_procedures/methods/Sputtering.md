@@ -41,7 +41,7 @@
 
 ### Subsections
 ??? "segments"
-    Repeating section. Details about the sputtering segments.
+    Repeating section. Details about the sputtering steps.
     {% include "data_schemas/experimental_procedures/subsections/sputtering_segment.md" %}
 
 ??? "target"
