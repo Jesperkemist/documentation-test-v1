@@ -61,5 +61,16 @@ Data that describe the type of measurement and on what it has been performed on
 
 ### Raw data
 The raw data for the measurement
+The raw data can at the moment not be uploaded directly in the graphical interface. To add raw data, the data needs to be added manually to teh JSON file before being uploaded to NOMAD
 
-TODO. Left to implement        
+??? "eqe"
+    A list of the eqe trace
+    
+    * type: list of floats
+    * Example: [1, 2, 3, 4, ...]
+
+??? "wavelength"
+    A list of the wavelength trace
+    
+    * type: list of floats
+    * Example: [1, 2, 3, 4, ...]    

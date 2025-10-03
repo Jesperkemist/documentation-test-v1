@@ -1,10 +1,10 @@
 ### Numerical quantities
-??? "time_in_solution"
-    The total time of all the procedure. 
+??? "duration"
+    The total time of the procedure.
 
     * type: float
-    * unit: s
-    * example: 60
+    * unit: minute
+    * example: 15
 
 ??? "substrate_temperature"
     The temperature of the substrate during the activity. 
@@ -47,4 +47,13 @@
 ??? "steps"
     Details about the four ALD steps.
     {% include "data_schemas/experimental_procedures/subsections/ald_segment.md" %} 
-   
+
+### Method data
+??? "m_def"
+    A keyword that needs to be included to be abel to utilize normalization features in NOMAD
+    For methods that has been defined in NOMAD, this should be on the form
+    perovskite_solar_cell_database.schema_packages.tandem.device_stack.METHOD
+
+    * type: str
+    * example: 
+        * perovskite_solar_cell_database.schema_packages.tandem.device_stack.AtomicLayerDeposition  

@@ -35,4 +35,15 @@ Data that describe the type of measurement and on what it has been performed on
 
 ### Raw data
 The raw data for the measurement
-TODO. Left to implement    
+The raw data can at the moment not be uploaded directly in the graphical interface. To add raw data, the data needs to be added manually to teh JSON file before being uploaded to NOMAD
+??? "transmission"
+    A list of the transmission trace
+    
+    * type: list of floats
+    * Example: [1, 2, 3, 4, ...]
+
+??? "wavelength"
+    A list of the wavelength trace
+    
+    * type: list of floats
+    * Example: [1, 2, 3, 4, ...]

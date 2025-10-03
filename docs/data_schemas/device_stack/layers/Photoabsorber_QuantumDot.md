@@ -5,13 +5,9 @@
 <!-- ### Layer -->
 {% include "data_schemas/device_stack/layers/layer.md" %}   
 
-??? "material"
-    The material of the quantum dots.
-
-    type: str
-    example: PbS
-
-{% include "data_schemas/device_stack/materials/compound_nanostructuration.md" %}
+??? "nanostructuration"
+    Shape and size of the nanoparticles
+    {% include "data_schemas/device_stack/materials/compound_nanostructuration.md" %}
 
 ## Subsections
 ??? "ligands"

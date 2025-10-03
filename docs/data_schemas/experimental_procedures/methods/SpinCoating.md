@@ -56,13 +56,6 @@
     * unit: ml/s
     * example: 1.5
 
-??? "dispense_speed"
-    The dispense speed of the precursor solution.
-
-    * type: float
-    * unit: ml/s
-    * example: 1.5
-
 ??? "distance_between_tip_and_substrate"
     Distance between the pipet tip and the substrate
 
@@ -78,7 +71,7 @@
     * example: homebuilt_system
 
 ### Sub sections
-??? "spin_coating_segments"
+??? "spin_coating_steps"
     A spin-coating program can be composed of several different steps. This is a repeating section for describing all the spin-coating steps.
 
     ??? "duration"
@@ -121,3 +114,13 @@
 
 ??? "gas_quenching_details"
     {% include "data_schemas/experimental_procedures/subsections/gas_quenching_details.md" %} 
+
+### Method data
+??? "m_def"
+    A keyword that needs to be included to be abel to utilize normalization features in NOMAD
+    For methods that has been defined in NOMAD, this should be on the form
+    perovskite_solar_cell_database.schema_packages.tandem.device_stack.METHOD
+
+    * type: str
+    * example: 
+        * perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating      

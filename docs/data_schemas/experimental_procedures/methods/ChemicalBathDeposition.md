@@ -1,4 +1,11 @@
 ### Numerical quantities
+??? "duration"
+    The total time of the procedure.
+
+    * type: float
+    * unit: minute
+    * example: 15
+
 ??? "time_in_solution"
     The total time of all the procedure. 
 
@@ -6,7 +13,7 @@
     * unit: s
     * example: 60
 
-??? "substrate_temperature"
+??? "sample_temperature"
     The temperature of the substrate during the activity. 
 
     * type: float
@@ -46,3 +53,13 @@
 
 ??? "environmental_conditions"
     {% include "data_schemas/experimental_procedures/subsections/environmental_conditions_deposition.md" %}      
+
+### Method data
+??? "m_def"
+    A keyword that needs to be included to be abel to utilize normalization features in NOMAD
+    For methods that has been defined in NOMAD, this should be on the form
+    perovskite_solar_cell_database.schema_packages.tandem.device_stack.METHOD
+
+    * type: str
+    * example: 
+        * perovskite_solar_cell_database.schema_packages.tandem.device_stack.ChemicalBathDeposition   

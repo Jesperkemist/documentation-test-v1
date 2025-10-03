@@ -10,7 +10,7 @@
     * type: int
     * example: 10 
 
-??? "steps"
+??? "segments"
     A repeating section detailing the conditions in each load step
 
     ??? "duration"

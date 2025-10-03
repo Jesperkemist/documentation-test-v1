@@ -1,2 +1,4 @@
 # Ignore Python virtual environments
 venv/
+tandem_schemas/
+tandem_schemas_2025_10_03/

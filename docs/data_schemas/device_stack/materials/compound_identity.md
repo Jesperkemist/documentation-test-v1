@@ -40,4 +40,4 @@
     The pubchem link
 
     * type: str
-    * example: "https://pubchem.ncbi.nlm.nih.gov/compound/2519#section=SMILES"     
+    * example: "https://pubchem.ncbi.nlm.nih.gov/compound/2519"     

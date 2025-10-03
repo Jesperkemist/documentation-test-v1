@@ -1,6 +1,6 @@
 ### Top level
 ??? "name"
-    A sensible name for the layer. A good default is the trade name of the material, possibly with an addition of the microstructure.  
+    A sensible name for the layer. A good default is the trade name of the primary material in the layer, possibly with an addition of the microstructure, or doping conditions  
 
     * type: str
     * examples: 
