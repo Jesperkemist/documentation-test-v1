@@ -1,0 +1,3115 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="T. Jesper Jacobsson">
+      
+      
+      
+        <link rel="prev" href="../Photoabsorber_DSSC/">
+      
+      
+        <link rel="next" href="../../../experimental_procedures/experimental_procedures/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>QuantumDot - Perovksite Tandem Database. Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#top-level" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Perovksite Tandem Database. Documentation" class="md-header__button md-logo" aria-label="Perovksite Tandem Database. Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Perovksite Tandem Database. Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              QuantumDot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Perovksite Tandem Database. Documentation" class="md-nav__button md-logo" aria-label="Perovksite Tandem Database. Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Perovksite Tandem Database. Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Data Schemas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Data Schemas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instructions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    data
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../general/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    general
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference/reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    reference
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../key_performance_metrics/key_performance_metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    key_performance_metrics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    device_stack
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            device_stack
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../information/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Information
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4_2" id="__nav_2_2_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Layers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Layers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GeneralLayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GeneralLayer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Photoabsorber_Perovskite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Perovskite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Photoabsorber_Silicon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Silicon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Photoabsorber_CIGS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CIGS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Photoabsorber_CZTS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CZTS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Photoabsorber_GaAs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GaAs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Photoabsorber_OPV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OPV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Photoabsorber_DSSC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DSSC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    QuantumDot
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    QuantumDot
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#top-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsections_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsections_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level sections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsections_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Band gap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conductivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conductivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crystallinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crystallinity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electron-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electron mobility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hole-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hole mobility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#photoluminesence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Photoluminesence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refractive-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refractive index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sheet-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sheet resistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-roughness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surface roughness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thickness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thickness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-data_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsections_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derived properties
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../experimental_procedures/experimental_procedures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Experimental procedures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    measurements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            measurements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../measurements/JV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    jv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../measurements/EQE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    eqe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../measurements/Stabilized_performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    stabilized_performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../measurements/Stability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    stability
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../measurements/Outdoor_performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    outdoor_performance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../measurements/Transmission/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    transmission
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../measurements/Flexibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    flexibility
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../encapsulation/encapsulation_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    encapsulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../module/module_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    module_data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../datafiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Example data files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../how_to_cite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to cite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../how_to_guides/how_to_guides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to guides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contribute_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contribute data
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../extend_the_data_schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to extend the data schemas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../instructions_for_authors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instructions for authors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#top-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsections_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsections_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subsections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#top-level-sections" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level sections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsections_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Band gap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conductivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conductivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crystallinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crystallinity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electron-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Electron mobility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hole-mobility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hole mobility
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#photoluminesence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Photoluminesence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refractive-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refractive index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sheet-resistance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sheet resistance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#surface-roughness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Surface roughness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thickness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thickness
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-level-data_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top level data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subsections_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsections
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Derived properties
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>QuantumDot</h1>
+
+<details open="open">
+<summary>m_def</summary>
+<p>Should be: "perovskite_solar_cell_database.schema_packages.tandem.device_stack.Photoabsorber_QuantumDot" <br>
+This is needed to be able to take advantage of normalization functionality in the NOMAD database</p>
+</details>
+<!-- ### Layer -->
+<h3 id="top-level">Top level<a class="headerlink" href="#top-level" title="Permanent link">&para;</a></h3>
+<details>
+<summary>name</summary>
+<p>A sensible name for the layer. A good default is the trade name of the primary material in the layer, possibly with an addition of the microstructure, or doping conditions  </p>
+<ul>
+<li>type: str</li>
+<li>examples: <ul>
+<li>TiO2-mp</li>
+<li>PEDOT:PSS</li>
+<li>Spiro-MeOTAD</li>
+<li>SLG</li>
+<li>ITO</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>device_subset</summary>
+<p>If the device not is monolithic, this describes which individual subcell the layer belongs to.  </p>
+<ul>
+<li>0 = the layer belongs to a monolithic device </li>
+<li>1 = the layer belongs to the bottom subcell, </li>
+<li>2 = the layer belongs to the second subcell (top cell in a 2-junction device)</li>
+<li>
+<p>3 = the layer belongs to the third subcell (top cell in a 3-junction device)</p>
+<ul>
+<li>type: int</li>
+<li>example: 0</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>functionality</summary>
+<p>The primary functionality the layer has in the device stack.</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>air_gap</li>
+<li>anti_reflection</li>
+<li>back_contact</li>
+<li>back_reflector</li>
+<li>buffer_layer</li>
+<li>down_conversion</li>
+<li>edge_sealing</li>
+<li>electrolyte</li>
+<li>encapsulation</li>
+<li>electron_transport_layer</li>
+<li>front_contact</li>
+<li>hole_transport_layer</li>
+<li>interface_modifier</li>
+<li>mesoporous_scaffold</li>
+<li>middle_contact</li>
+<li>organic_dye</li>
+<li>optical_spacer</li>
+<li>photoabsorber</li>
+<li>recombination_layer</li>
+<li>refractive_index_matching</li>
+<li>self_assembled_monolayer</li>
+<li>spectral_splitter</li>
+<li>subcell_spacer</li>
+<li>substrate</li>
+<li>transparent_conducting_oxide</li>
+<li>up_conversion</li>
+<li>window_layer</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>nanostructuration</summary>
+<p>Shape and size of the nanoparticles</p>
+<details>
+<summary>shape</summary>
+<p>The nanostructure of the compound</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>nanoparticle</li>
+<li>quantum_dot</li>
+<li>nanorod</li>
+<li>disc</li>
+<li>sheet</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>diameter</summary>
+<p>diameter</p>
+<ul>
+<li>unit: float</li>
+<li>unit: nm</li>
+<li>example: 10</li>
+</ul>
+</details>
+<details>
+<summary>width</summary>
+<p>width</p>
+<ul>
+<li>unit: float</li>
+<li>unit: nm</li>
+<li>example: 15</li>
+</ul>
+</details>
+<details>
+<summary>length</summary>
+<p>length</p>
+<ul>
+<li>unit: float</li>
+<li>unit: nm</li>
+<li>example: 25   </li>
+</ul>
+</details>
+</details>
+<h2 id="subsections">Subsections<a class="headerlink" href="#subsections" title="Permanent link">&para;</a></h2>
+<details>
+<summary>ligands</summary>
+<p>The ligands used for the particles</p>
+<h2 id="top-level-data">Top level data<a class="headerlink" href="#top-level-data" title="Permanent link">&para;</a></h2>
+<details>
+<summary>name</summary>
+<p>The common trade name of the material.</p>
+<ul>
+<li>type: str</li>
+<li>example:Dodecanethiol </li>
+</ul>
+</details>
+<details>
+<summary>abbreviation</summary>
+<p>Standard arreviation of the compound.</p>
+<ul>
+<li>type: str</li>
+<li>example: DDT</li>
+</ul>
+</details>
+<details>
+<summary>origin</summary>
+<p>The origin of the compound</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>commercial_supplier</li>
+<li>made_in_house</li>
+<li>made_by_collaborator</li>
+<li>collected_in_nature</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<h2 id="subsections_1">Subsections<a class="headerlink" href="#subsections_1" title="Permanent link">&para;</a></h2>
+<details>
+<summary>identity</summary>
+<div class="admonition tip">
+<p class="admonition-title">Tip : if the Pubchem cid is available, that is enough to automatically  populate the following key-value pairs. <br/> Often it is enough to provide one of the following data fields to be able to automatically populate the rest</p>
+</div>
+<details>
+<summary>pup_chem_cid</summary>
+<p>The ID number of the compound in the Pubchem database (https://pubchem.ncbi.nlm.nih.gov/).</p>
+<ul>
+<li>type: str</li>
+<li>example: "C8H10N4O2"  </li>
+</ul>
+</details>
+<details>
+<summary>iupac_name</summary>
+<p>The standard IUPAC name</p>
+<ul>
+<li>type: str</li>
+<li>example: "1,3,7-trimethylpurine-2,6-dione"</li>
+</ul>
+</details>
+<details>
+<summary>molecular_formula</summary>
+<p>The molecular formula</p>
+<ul>
+<li>type: str</li>
+<li>example: "C8H10N4O2"   </li>
+</ul>
+</details>
+<details>
+<summary>smiles</summary>
+<p>The canonical SMILES string</p>
+<ul>
+<li>type: str</li>
+<li>example: "C8H10N4O2"       </li>
+</ul>
+</details>
+<details>
+<summary>cas_number</summary>
+<p>The CAS number</p>
+<ul>
+<li>type: str</li>
+<li>example: "58-08-2" </li>
+</ul>
+</details>
+<details>
+<summary>inchi</summary>
+<p>The inchi</p>
+<ul>
+<li>type: str</li>
+<li>example: "1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3" </li>
+</ul>
+</details>
+<details>
+<summary>pub_chem_link</summary>
+<p>The pubchem link</p>
+<ul>
+<li>type: str</li>
+<li>example: "https://pubchem.ncbi.nlm.nih.gov/compound/2519"     </li>
+</ul>
+</details>
+</details>
+<details>
+<summary>supplier</summary>
+<details>
+<summary>supplier</summary>
+<p>The name of the supplier of the substance.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "Merck"</li>
+</ul>
+</details>
+<details>
+<summary>product_number</summary>
+<p>The supplier's product number of the substance.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "792071"</li>
+</ul>
+</details>
+<details>
+<summary>batch_number</summary>
+<p>The supplier's batch number of the substance bought.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "xyz"</li>
+</ul>
+</details>
+<details>
+<summary>purity</summary>
+<p>The stated purity of the substance.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "99% (HPLC)"</li>
+</ul>
+</details>
+<details>
+<summary>delivery_date</summary>
+<p>Date of delivery</p>
+<ul>
+<li>type: datetime</li>
+<li>example: 2020-07-08   </li>
+</ul>
+</details>
+</details>
+<details>
+<summary>synthesis</summary>
+<p>For compounds not sourced from commercial suppliers.</p>
+<details>
+<summary>synthesis_method</summary>
+<p>The synthesis method used to make the substance.'</p>
+<ul>
+<li>type: str</li>
+<li>example: "solvothermal syntesis"</li>
+</ul>
+</details>
+<details>
+<summary>synthesis_date</summary>
+<p>Date of synthesis of the substance.</p>
+<ul>
+<li>type: datetime</li>
+<li>example: 2020-07-08    </li>
+</ul>
+</details>
+<details>
+<summary>free_text_comment</summary>
+<p>Any additional description not captured by any other field.</p>
+<ul>
+<li>type: str</li>
+<li>example: "An elaborate synthesis protocol"  </li>
+</ul>
+</details>
+</details>
+</details>
+<!-- ### Deposition procedure -->
+<details>
+<summary>deposition_procedure</summary>
+<p>The deposition procedure for the layer. The deposition of a layer could involve several deposition steps, or steps. </p>
+<h2 id="top-level_1">Top level<a class="headerlink" href="#top-level_1" title="Permanent link">&para;</a></h2>
+<details>
+<summary>substrate_layer</summary>
+<p>The layer on which the layer is deposited.
+The layer are ordered from bottom (furthest from the sun) to top (closest to the sun).
+Indicate if the layer was deposited on a layer that is below or above it in the device 
+(when the device is oriented with the top towards the sun)
+There are a few exceptions in that a layer can be a substrate, 
+it could be a layer that laminates two subcells, 
+and it could be a layer that is not deposited at all (like an air gap) </p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>is_substrate</li>
+<li>on_lower_layer</li>
+<li>on_upper_layer</li>
+<li>laminate_layers</li>
+<li>not-deposited    </li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>origin</summary>
+<p>The place where the layer was deposited. i.e. was it deposited in the lab or was it bought. An example of a layer that often is bought is the ITO layer on glass substrates</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>commercial_supplier</li>
+<li>deposited_in_house</li>
+<li>deposited_by_collaborator</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>duration</summary>
+<p>The time it takes to deposit the layer from start to finish.</p>
+<ul>
+<li>type: float</li>
+<li>unit: minute</li>
+<li>example: 15</li>
+</ul>
+</details>
+<details>
+<summary>time_from_last_step</summary>
+<p>The time from the finalization of the last layer 
+and the start of the deposition of this.</p>
+<ul>
+<li>type: float</li>
+<li>unit: h</li>
+<li>example: 0.5</li>
+</ul>
+</details>
+<details>
+<summary>time_stamp</summary>
+<p>Date and time of the procedure</p>
+<ul>
+<li>type: datetime</li>
+<li>example: 2020-07-08</li>
+</ul>
+</details>
+<h2 id="subsections_2">Subsections<a class="headerlink" href="#subsections_2" title="Permanent link">&para;</a></h2>
+<details>
+<summary>steps</summary>
+<p>List of all deposition steps that is used to deposit the layer. 
+This will probably never be a compleat list of possible deposition procedures. However, using the methods described here as templates, it is possible define data schemas for new procedures. </p>
+<details>
+<summary>method</summary>
+<p>The type of process</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>AtomicLayerDeposition</li>
+<li>ChemicalBathDeposition</li>
+<li>ChemicalVapourDeposition</li>
+<li>Cleaning</li>
+<li>DipCoating</li>
+<li>DoctorBlading</li>
+<li>Evaporation</li>
+<li>Heating</li>
+<li>InkjetPrinting</li>
+<li>IonExchangeByDipping</li>
+<li>IonExchangeByGasDiffusion</li>
+<li>OzonTreatment</li>
+<li>SlotDyeCoating</li>
+<li>SpinCoating</li>
+<li>SprayCoating</li>
+<li>Sputtering</li>
+<li>UVOzonTreatment</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>m_def</summary>
+<p>A keyword that needs to be included to be abel to utilize normalization features in NOMAD
+For methods that has been defined in NOMAD, this should be on the form
+perovskite_solar_cell_database.schema_packages.tandem.device_stack.METHOD
+where METHOD could be AtomicLayerDeposition, Heating, SpinCoating, etc.</p>
+<ul>
+<li>type: str</li>
+<li>examples: <ul>
+<li>perovskite_solar_cell_database.schema_packages.tandem.device_stack.AtomicLayerDeposition</li>
+<li>perovskite_solar_cell_database.schema_packages.tandem.device_stack.Heating</li>
+<li>perovskite_solar_cell_database.schema_packages.tandem.device_stack.SpinCoating</li>
+</ul>
+</li>
+</ul>
+</details>
+<details open="open">
+<summary>Procedure dependent key-value pairs and subsections</summary>
+<p>...</p>
+<details class="warning" open="open">
+<summary>Note on nesting</summary>
+<p>In the NOMAD implementation, choosing a method dynamically modifies the data fields displayed, to capture that different procedures require rather different descriptions. 
+In this documentation, description for different deposition procedures are found under the headline "experimental_procedures" in the menu to the left. <br/>
+However, in the generated datafiles, those sections should be nested here.</p>
+</details>
+</details>
+</details>
+<details>
+<summary>sample_history</summary>
+<p>A description of the conditions under which the sample have been stored between the finalization of the last step and this step</p>
+<details>
+<summary>ambient_conditions</summary>
+<p>TRUE if the activity is occurring in in uncontrolled ambient conditions. FALSE otherwise   </p>
+<ul>
+<li>type: boolean</li>
+<li>options: TRUE, FALSE</li>
+</ul>
+</details>
+<details>
+<summary>in_glove_box</summary>
+<p>True if the the activity was performed in a glove box, False otherwise.</p>
+<ul>
+<li>type: boolean</li>
+<li>options: TRUE, FALSE</li>
+</ul>
+</details>
+<details>
+<summary>atmosphere</summary>
+<p>Atmosphere during the activity.</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>air </li>
+<li>dry_air </li>
+<li>N2 </li>
+<li>Ar </li>
+<li>He </li>
+<li>O2 </li>
+<li>H2 </li>
+<li>vacuum </li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>pressure</summary>
+<p>The atmospheric pressure during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: Pa</li>
+<li>example: 101325</li>
+</ul>
+</details>
+<details>
+<summary>ambient_temperature</summary>
+<p>Ambient temperature during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: C</li>
+<li>example: 25</li>
+</ul>
+</details>
+<details>
+<summary>device_temperature</summary>
+<p>The temperature of the device during the activity</p>
+<ul>
+<li>type: float</li>
+<li>unit: C</li>
+<li>example: 25</li>
+</ul>
+</details>
+<details>
+<summary>relative_humidity</summary>
+<p>Relative humidity during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: %</li>
+<li>example: 45</li>
+</ul>
+</details>
+<details>
+<summary>oxygen_concentration</summary>
+<p>The oxygen concentration during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: %</li>
+<li>example: 0.001</li>
+</ul>
+</details>
+</details>
+</details>
+<!-- ### Post deposition procedure -->
+<details>
+<summary>post_deposition_procedure</summary>
+<p>Post deposition procedure. This refer to any operation done on the sample after a layer have been completely formed, but before the deposition of the next. </p>
+<h3 id="top-level-sections">Top level sections<a class="headerlink" href="#top-level-sections" title="Permanent link">&para;</a></h3>
+<details>
+<summary>duration</summary>
+<p>The time it takes to deposit the layer from start to finish.</p>
+<ul>
+<li>type: float</li>
+<li>unit: minute</li>
+<li>example: 15</li>
+</ul>
+</details>
+<details>
+<summary>time_from_last_step</summary>
+<p>The time from the finalization of the last layer 
+and the start of this process.</p>
+<ul>
+<li>type: float</li>
+<li>unit: h</li>
+<li>example: 0.5</li>
+</ul>
+</details>
+<details>
+<summary>time_stamp</summary>
+<p>Date and time of the procedure</p>
+<ul>
+<li>type: datetime</li>
+<li>example: 2020-07-08</li>
+</ul>
+</details>
+<h3 id="subsections_3">Subsections<a class="headerlink" href="#subsections_3" title="Permanent link">&para;</a></h3>
+<details>
+<summary>steps</summary>
+<p>The steps of the procedure.</p>
+<details>
+<summary>method</summary>
+<p>The type of process</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>AtomicLayerDeposition</li>
+<li>ChemicalBathDeposition</li>
+<li>ChemicalVapourDeposition</li>
+<li>Cleaning</li>
+<li>DipCoating</li>
+<li>DoctorBlading</li>
+<li>Evaporation</li>
+<li>Heating</li>
+<li>InkjetPrinting</li>
+<li>IonExchangeByDipping</li>
+<li>IonExchangeByGasDiffusion</li>
+<li>OzonTreatment</li>
+<li>SlotDyeCoating</li>
+<li>SpinCoating</li>
+<li>SprayCoating</li>
+<li>Sputtering</li>
+<li>Storage</li>
+<li>UVOzonTreatment</li>
+<li>...</li>
+</ul>
+</li>
+</ul>
+</details>
+<details open="open">
+<summary>Procedure dependent key-value pairs and subsections</summary>
+<p>...</p>
+<details class="warning" open="open">
+<summary>Note on nesting</summary>
+<p>In the NOMAD implementation, choosing a method dynamically modifies the data fields displayed, to capture that different procedures require rather different descriptions. 
+In this documentation, description for different deposition procedures are found under the headline "experimental_procedures" in the menu to the left. <br/>
+However, in the generated datafiles, those sections should be nested here.</p>
+</details>
+</details>
+</details>
+<details>
+<summary>sample_history</summary>
+<p>A description of the conditions under which the sample have been stored between
+the finalization of the last layer and the deposition of this layer</p>
+<details>
+<summary>ambient_conditions</summary>
+<p>TRUE if the activity is occurring in in uncontrolled ambient conditions. FALSE otherwise   </p>
+<ul>
+<li>type: boolean</li>
+<li>options: TRUE, FALSE</li>
+</ul>
+</details>
+<details>
+<summary>in_glove_box</summary>
+<p>True if the the activity was performed in a glove box, False otherwise.</p>
+<ul>
+<li>type: boolean</li>
+<li>options: TRUE, FALSE</li>
+</ul>
+</details>
+<details>
+<summary>atmosphere</summary>
+<p>Atmosphere during the activity.</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>air </li>
+<li>dry_air </li>
+<li>N2 </li>
+<li>Ar </li>
+<li>He </li>
+<li>O2 </li>
+<li>H2 </li>
+<li>vacuum </li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>pressure</summary>
+<p>The atmospheric pressure during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: Pa</li>
+<li>example: 101325</li>
+</ul>
+</details>
+<details>
+<summary>ambient_temperature</summary>
+<p>Ambient temperature during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: C</li>
+<li>example: 25</li>
+</ul>
+</details>
+<details>
+<summary>device_temperature</summary>
+<p>The temperature of the device during the activity</p>
+<ul>
+<li>type: float</li>
+<li>unit: C</li>
+<li>example: 25</li>
+</ul>
+</details>
+<details>
+<summary>relative_humidity</summary>
+<p>Relative humidity during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: %</li>
+<li>example: 45</li>
+</ul>
+</details>
+<details>
+<summary>oxygen_concentration</summary>
+<p>The oxygen concentration during the activity.</p>
+<ul>
+<li>type: float</li>
+<li>unit: %</li>
+<li>example: 0.001</li>
+</ul>
+</details>
+</details>
+</details>
+<!-- ### Layer properties -->
+<details>
+<summary>properties</summary>
+<p>Properties of the layer. Each property is encapsulated in its own subsection</p>
+<h3 id="area">Area<a class="headerlink" href="#area" title="Permanent link">&para;</a></h3>
+<details>
+<summary>area</summary>
+<p>The area of the layer.  </p>
+<details>
+<summary>value</summary>
+<p>The area of the layer. Most layers may have the same area as the substrate, but they cna also be smaller than the substrate area</p>
+<ul>
+<li>type: float</li>
+<li>unit: cm^2</li>
+<li>example: 2.5</li>
+</ul>
+</details>
+</details>
+<h3 id="band-gap">Band gap<a class="headerlink" href="#band-gap" title="Permanent link">&para;</a></h3>
+<details>
+<summary>band_gap</summary>
+<p>The band gap of the layer. </p>
+<details>
+<summary>value</summary>
+<p>The band gap of the layer</p>
+<ul>
+<li>type: float</li>
+<li>unit: eV</li>
+<li>example: 1.56</li>
+</ul>
+</details>
+<details>
+<summary>graded</summary>
+<p>TRUE if the band gap varies as a function of the vertical position in the layer </p>
+<ul>
+<li>type: boolean</li>
+<li>options: TRUE, FALSE </li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The method by which the band gap was estimated.
+The band gap can be estimated from absorption data, 
+EQE-data, UPS-data, or it can be estimated based on literature values 
+for the recipe, or it could be inferred from the composition and what 
+we know of similar but not identical compositions. </p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>absorption</li>
+<li>absorption_tauc-plot</li>
+<li>composition</li>
+<li>eqe</li>
+<li>literature</li>
+<li>ups</li>
+<li>xps</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+</details>
+<h3 id="conductivity">Conductivity<a class="headerlink" href="#conductivity" title="Permanent link">&para;</a></h3>
+<details>
+<summary>conductivity</summary>
+<p>The conductivity of the layer.  </p>
+<details>
+<summary>value</summary>
+<p>The conductivity of the layer</p>
+<ul>
+<li>type: float</li>
+<li>unit: S/m</li>
+<li>example: 12.5</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "four_point_probe"</li>
+</ul>
+</details>
+</details>
+<h3 id="crystallinity">Crystallinity<a class="headerlink" href="#crystallinity" title="Permanent link">&para;</a></h3>
+<details>
+<summary>crystallinity</summary>
+<p>The crystallinity of the layer.  </p>
+<details>
+<summary>value</summary>
+<p>The crystallinity of the layer</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>amorphous</li>
+<li>polycrystalline</li>
+<li>single_crystal</li>
+<li>nanoparticles</li>
+<li>nanorods</li>
+<li>qunatum_dots</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>average_grain_size</summary>
+<p>The band gap of the layer</p>
+<ul>
+<li>type: float</li>
+<li>unit: nm</li>
+<li>example: 230</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "sem"</li>
+</ul>
+</details>
+</details>
+<h3 id="electron-mobility">Electron mobility<a class="headerlink" href="#electron-mobility" title="Permanent link">&para;</a></h3>
+<details>
+<summary>electron_mobility</summary>
+<p>The electron mobility of the layer. </p>
+<details>
+<summary>value</summary>
+<p>The electron mobility of the layer.</p>
+<ul>
+<li>type: float</li>
+<li>unit: cm*<em>2/(V</em>s)</li>
+<li>example: 250</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "hall_measurement"</li>
+</ul>
+</details>
+</details>
+<h3 id="hole-mobility">Hole mobility<a class="headerlink" href="#hole-mobility" title="Permanent link">&para;</a></h3>
+<details>
+<summary>hole_mobility</summary>
+<p>The hole mobility of the layer. </p>
+<details>
+<summary>value</summary>
+<p>The hole mobility of the layer. </p>
+<ul>
+<li>type: float</li>
+<li>unit: cm*<em>2/(V</em>s)</li>
+<li>example: 250</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "hall_measurement"</li>
+</ul>
+</details>
+</details>
+<h3 id="photoluminesence">Photoluminesence<a class="headerlink" href="#photoluminesence" title="Permanent link">&para;</a></h3>
+<details>
+<summary>photoluminesence</summary>
+<p>The photoluminesence of the layer. </p>
+<details>
+<summary>pl_max</summary>
+<p>The wavelength of the maximum PL intensity'. </p>
+<ul>
+<li>type: float</li>
+<li>unit: nm</li>
+<li>example: 550</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "spectrometer"</li>
+</ul>
+</details>
+</details>
+<h3 id="refractive-index">Refractive index<a class="headerlink" href="#refractive-index" title="Permanent link">&para;</a></h3>
+<details>
+<summary>refractive_index</summary>
+<p>The refractive index of the layer.  </p>
+<details>
+<summary>refractive_index</summary>
+<p>The real part of the refractive index of the layer. </p>
+<ul>
+<li>type: float</li>
+<li>example:1.75</li>
+</ul>
+</details>
+<details>
+<summary>extinction_coefficient</summary>
+<p>The imaginary part of the refractive index of the layer. </p>
+<ul>
+<li>type: float</li>
+<li>example:1.75</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "ellipsoetry"</li>
+</ul>
+</details>
+</details>
+<h3 id="sheet-resistance">Sheet resistance<a class="headerlink" href="#sheet-resistance" title="Permanent link">&para;</a></h3>
+<details>
+<summary>sheet_resistance</summary>
+<p>The sheet resistance of the layer.  </p>
+<details>
+<summary>value</summary>
+<p>The sheet resistance of the layer</p>
+<ul>
+<li>type: float</li>
+<li>unit: ohm</li>
+<li>example: 25</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "four_point_probe"</li>
+</ul>
+</details>
+</details>
+<h3 id="surface-roughness">Surface roughness<a class="headerlink" href="#surface-roughness" title="Permanent link">&para;</a></h3>
+<details>
+<summary>surface_roughness</summary>
+<p>The root mean square value of the surface roughness.  </p>
+<details>
+<summary>value</summary>
+<p>The root mean square value of the surface roughness</p>
+<ul>
+<li>type: float</li>
+<li>unit: nm</li>
+<li>example: 25</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "AFM"</li>
+</ul>
+</details>
+</details>
+<h3 id="thickness">Thickness<a class="headerlink" href="#thickness" title="Permanent link">&para;</a></h3>
+<details>
+<summary>thickness</summary>
+<p>The thickness of the layer.</p>
+<details>
+<summary>value</summary>
+<p>The thickness of the layer.</p>
+<ul>
+<li>type: float</li>
+<li>unit: nm</li>
+<li>example: 560</li>
+</ul>
+</details>
+<details>
+<summary>determined_by</summary>
+<p>The measurement or estimation method used to determine the property.</p>
+<ul>
+<li>type: str</li>
+<li>example: "sem"      </li>
+</ul>
+</details>
+</details>
+</details>
+<!-- ### Components in layer -->
+<details>
+<summary>components</summary>
+<p>Repeating section. List of all substances in the layer</p>
+<h3 id="top-level-data_1">Top level data<a class="headerlink" href="#top-level-data_1" title="Permanent link">&para;</a></h3>
+<details>
+<summary>name</summary>
+<p>The common trade name of the material.</p>
+<ul>
+<li>type: str</li>
+<li>example:<ul>
+<li>TiO2</li>
+<li>PEDOT:PSS</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>abbreviation</summary>
+<p>Standard arreviation of the compound.</p>
+<ul>
+<li>type: str</li>
+<li>example:<ul>
+<li>MA</li>
+<li>PEA        </li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>functionality</summary>
+<p>The primary functionality of the compound</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>majority_phase</li>
+<li>secondary_phase</li>
+<li>additive</li>
+<li>dopant</li>
+<li>impurity</li>
+<li>solvent</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>aggregation_state</summary>
+<p>The aggregation state of the compound</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>solid</li>
+<li>liquid</li>
+<li>gas</li>
+<li>solution</li>
+<li>suspension</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>origin</summary>
+<p>The origin of the compound</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>commercial_supplier</li>
+<li>made_in_house</li>
+<li>made_by_collaborator</li>
+<li>collected_in_nature</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>nanostructured</summary>
+<p>TRUE if the compound is nanostructured, e.g. nanoparticles, nanorods etc. </p>
+<ul>
+<li>type: boolean</li>
+<li>options: TRUE, FALSE   </li>
+</ul>
+</details>
+<h3 id="subsections_4">Subsections<a class="headerlink" href="#subsections_4" title="Permanent link">&para;</a></h3>
+<details>
+<summary>identity</summary>
+<div class="admonition tip">
+<p class="admonition-title">Tip : if the Pubchem cid is available, that is enough to automatically  populate the following key-value pairs. <br/> Often it is enough to provide one of the following data fields to be able to automatically populate the rest</p>
+</div>
+<details>
+<summary>pup_chem_cid</summary>
+<p>The ID number of the compound in the Pubchem database (https://pubchem.ncbi.nlm.nih.gov/).</p>
+<ul>
+<li>type: str</li>
+<li>example: "C8H10N4O2"  </li>
+</ul>
+</details>
+<details>
+<summary>iupac_name</summary>
+<p>The standard IUPAC name</p>
+<ul>
+<li>type: str</li>
+<li>example: "1,3,7-trimethylpurine-2,6-dione"</li>
+</ul>
+</details>
+<details>
+<summary>molecular_formula</summary>
+<p>The molecular formula</p>
+<ul>
+<li>type: str</li>
+<li>example: "C8H10N4O2"   </li>
+</ul>
+</details>
+<details>
+<summary>smiles</summary>
+<p>The canonical SMILES string</p>
+<ul>
+<li>type: str</li>
+<li>example: "C8H10N4O2"       </li>
+</ul>
+</details>
+<details>
+<summary>cas_number</summary>
+<p>The CAS number</p>
+<ul>
+<li>type: str</li>
+<li>example: "58-08-2" </li>
+</ul>
+</details>
+<details>
+<summary>inchi</summary>
+<p>The inchi</p>
+<ul>
+<li>type: str</li>
+<li>example: "1S/C8H10N4O2/c1-10-4-9-6-5(10)7(13)12(3)8(14)11(6)2/h4H,1-3H3" </li>
+</ul>
+</details>
+<details>
+<summary>pub_chem_link</summary>
+<p>The pubchem link</p>
+<ul>
+<li>type: str</li>
+<li>example: "https://pubchem.ncbi.nlm.nih.gov/compound/2519"     </li>
+</ul>
+</details>
+</details>
+<details>
+<summary>amount</summary>
+<details>
+<summary>mass_fraction</summary>
+<p>The mass fraction of the substance.</p>
+<ul>
+<li>unit: float</li>
+<li>unit: dimensionless</li>
+<li>example: 0.95</li>
+</ul>
+</details>
+<details>
+<summary>volume_fraction</summary>
+<p>The volume fraction of the substance</p>
+<ul>
+<li>unit: float</li>
+<li>unit: dimensionless</li>
+<li>example: 0.95</li>
+</ul>
+</details>
+<details>
+<summary>mole_fraction</summary>
+<p>The mole fraction of the substance</p>
+<ul>
+<li>unit: float</li>
+<li>unit: dimensionless</li>
+<li>example: 0.95</li>
+</ul>
+</details>
+<details>
+<summary>molar_concentration</summary>
+<p>The molarity of the substance.</p>
+<ul>
+<li>unit: float</li>
+<li>unit: mol/l</li>
+<li>example: 0.05</li>
+</ul>
+</details>
+<details>
+<summary>mass_concentration</summary>
+<p>The molarity of the substance.</p>
+<ul>
+<li>unit: float</li>
+<li>unit: g/l</li>
+<li>example: 2.3</li>
+</ul>
+</details>
+<details>
+<summary>mass</summary>
+<p>The amount of the substance</p>
+<ul>
+<li>type: float</li>
+<li>unit: g</li>
+<li>example: 2.5</li>
+</ul>
+</details>
+<details>
+<summary>volume</summary>
+<p>The volume of the substance</p>
+<ul>
+<li>type: float</li>
+<li>unit: ml</li>
+<li>example: 2.5    </li>
+</ul>
+</details>
+<details>
+<summary>partial_pressure</summary>
+<p>The partial pressure of the substance</p>
+<ul>
+<li>type: float</li>
+<li>unit: Pa</li>
+<li>example: 2500 </li>
+</ul>
+</details>
+<details>
+<summary>amount</summary>
+<p>The amount of the substance</p>
+<ul>
+<li>type: float</li>
+<li>unit: mol</li>
+<li>example 0.016</li>
+</ul>
+</details>
+</details>
+<details>
+<summary>supplier</summary>
+<details>
+<summary>supplier</summary>
+<p>The name of the supplier of the substance.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "Merck"</li>
+</ul>
+</details>
+<details>
+<summary>product_number</summary>
+<p>The supplier's product number of the substance.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "792071"</li>
+</ul>
+</details>
+<details>
+<summary>batch_number</summary>
+<p>The supplier's batch number of the substance bought.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "xyz"</li>
+</ul>
+</details>
+<details>
+<summary>purity</summary>
+<p>The stated purity of the substance.</p>
+<ul>
+<li>unit: str</li>
+<li>example: "99% (HPLC)"</li>
+</ul>
+</details>
+<details>
+<summary>delivery_date</summary>
+<p>Date of delivery</p>
+<ul>
+<li>type: datetime</li>
+<li>example: 2020-07-08   </li>
+</ul>
+</details>
+</details>
+<details>
+<summary>nanostructuration</summary>
+<details>
+<summary>shape</summary>
+<p>The nanostructure of the compound</p>
+<ul>
+<li>type: str</li>
+<li>options:<ul>
+<li>nanoparticle</li>
+<li>quantum_dot</li>
+<li>nanorod</li>
+<li>disc</li>
+<li>sheet</li>
+<li>other</li>
+</ul>
+</li>
+</ul>
+</details>
+<details>
+<summary>diameter</summary>
+<p>diameter</p>
+<ul>
+<li>unit: float</li>
+<li>unit: nm</li>
+<li>example: 10</li>
+</ul>
+</details>
+<details>
+<summary>width</summary>
+<p>width</p>
+<ul>
+<li>unit: float</li>
+<li>unit: nm</li>
+<li>example: 15</li>
+</ul>
+</details>
+<details>
+<summary>length</summary>
+<p>length</p>
+<ul>
+<li>unit: float</li>
+<li>unit: nm</li>
+<li>example: 25   </li>
+</ul>
+</details>
+</details>
+<details>
+<summary>synthesis</summary>
+<p>For compounds not sourced from commercial suppliers.</p>
+<details>
+<summary>synthesis_method</summary>
+<p>The synthesis method used to make the substance.'</p>
+<ul>
+<li>type: str</li>
+<li>example: "solvothermal syntesis"</li>
+</ul>
+</details>
+<details>
+<summary>synthesis_date</summary>
+<p>Date of synthesis of the substance.</p>
+<ul>
+<li>type: datetime</li>
+<li>example: 2020-07-08    </li>
+</ul>
+</details>
+<details>
+<summary>free_text_comment</summary>
+<p>Any additional description not captured by any other field.</p>
+<ul>
+<li>type: str</li>
+<li>example: "An elaborate synthesis protocol"  </li>
+</ul>
+</details>
+</details>
+</details>
+<h2 id="derived-properties">Derived properties<a class="headerlink" href="#derived-properties" title="Permanent link">&para;</a></h2>
+<details>
+<summary>layer_index</summary>
+<p>The position in the device stack for the layer. Counted from the bottom. Can be populated automatically </p>
+<ul>
+<li>type: int</li>
+<li>example: 3  </li>
+</ul>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Photoabsorber_DSSC/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DSSC">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                DSSC
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../experimental_procedures/experimental_procedures/" class="md-footer__link md-footer__link--next" aria-label="Next: Experimental procedures">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Experimental procedures
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.path", "navigation.footer", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
